@@ -1,4 +1,4 @@
-import { isObject, isArray, isNumber, isInteger } from './src/validationHelpers';
+import { isObject, isArray, isNumber, isInteger, isBoolean } from './validationHelpers';
 
 const _basefunc = function ( position = 0, validationFunc, errorMsg ) {
   return function ( key, target, descriptor )
@@ -28,7 +28,10 @@ export const acceptsNumber = function ( position = 0 ) {
   return _basefunc( position, isNumber, ' is not a number' );
 };
 
-
 export const acceptsInteger = function ( position = 0 ) {
   return _basefunc( position, isInteger, ' is not an integer' );
+};
+
+export const acceptsBoolean = function ( position = 0 ) {
+  return _basefunc( position, isBoolean, ' is not a boolean' );
 };

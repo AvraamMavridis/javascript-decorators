@@ -1,21 +1,21 @@
 import { expect } from 'chai';
-import { acceptsObject, acceptsArray, acceptsInteger } from '../simpleValidators';
+import { acceptsObject, acceptsArray, acceptsInteger, acceptsNumber, acceptsBoolean } from '../src/simpleValidators';
 
 class Person {
   @acceptsObject()
-  getAnObject( obj ) {
-    return true;
-  }
+  getAnObject( obj ) { return true; }
 
   @acceptsArray()
-  getAnArray( obj ) {
-    return true;
-  }
+  getAnArray( obj ) { return true; }
+
+  @acceptsNumber()
+  getANumber( obj ) { return true; }
 
   @acceptsInteger()
-  getAnInteger( obj ) {
-    return true;
-  }
+  getAnInteger( obj ) { return true; }
+
+  @acceptsBoolean()
+  getBoolean( obj ) { return true; }
 }
 
 describe( 'validation tests', function () {
@@ -42,12 +42,30 @@ describe( 'validation tests', function () {
     expect( p.getAnObject.bind( {}, 42 ) ).to.throw( Error );
   } );
 
+  // @acceptsNumber
+  it( '@acceptsNumber: execute the function if a number is passed', function () {
+    expect( p.getANumber( 42.23213 ) ).to.equal( true );
+  } );
+
+  it( '@acceptsNumber: throw an Error if a non number is passed', function () {
+    expect( p.getANumber.bind( {}, "something" ) ).to.throw( Error );
+  } );
+
   // @acceptsInteger
   it( '@acceptsInteger: execute the function if an integer is passed', function () {
     expect( p.getAnInteger( 42 ) ).to.equal( true );
   } );
 
   it( '@acceptsInteger: throw an Error if a non integer is passed', function () {
-    expect( p.getAnInteger.bind( {}, {} ) ).to.throw( Error );
+    expect( p.getAnInteger.bind( {}, 42.45 ) ).to.throw( Error );
+  } );
+
+  // @acceptsBoolean
+  it( '@acceptsBoolean: execute the function if a boolean is passed', function () {
+    expect( p.getBoolean( true ) ).to.equal( true );
+  } );
+
+  it( '@acceptsBoolean: throw an Error if a non boolean is passed', function () {
+    expect( p.getBoolean.bind( {}, 42.45 ) ).to.throw( Error );
   } );
 } );

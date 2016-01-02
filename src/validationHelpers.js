@@ -50,3 +50,16 @@ export const isNumber = function ( prop ) {
 export const isInteger = function ( prop ) {
   return isNumber( prop ) && prop % 1 == 0;
 };
+
+/**
+ * Tests if the prop is an integer
+ *
+ * @method isBoolean
+ *
+ * @param  { any }  prop
+ *
+ * @return { Boolean }
+ */
+export const isBoolean = function ( prop ) {
+  return typeof prop === 'boolean';
+};
