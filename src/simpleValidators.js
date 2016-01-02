@@ -1,9 +1,9 @@
-import { isObject, isArray, isNumber, isInteger, isBoolean } from './validationHelpers';
+import { isObject, isArray, isNumber, isInteger, isBoolean, isValidSchema } from './validationHelpers';
 
 const _basefunc = function ( position = 0, validationFunc, errorMsg ) {
   return function ( key, target, descriptor )
   {
-    const func= descriptor.value;
+    const func = descriptor.value;
     descriptor.value = function ( ...args )
     {
       const prop = args[ position ];
@@ -34,4 +34,8 @@ export const acceptsInteger = function ( position = 0 ) {
 
 export const acceptsBoolean = function ( position = 0 ) {
   return _basefunc( position, isBoolean, ' is not a boolean' );
+};
+
+export const validateSchema = function ( schema, position = 0 ) {
+  return isValidSchema( schema, position );
 };

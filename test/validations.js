@@ -1,5 +1,10 @@
 import { expect } from 'chai';
-import { acceptsObject, acceptsArray, acceptsInteger, acceptsNumber, acceptsBoolean } from '../src/simpleValidators';
+import { acceptsObject,
+         acceptsArray,
+         acceptsInteger,
+         acceptsNumber,
+         acceptsBoolean,
+         validateSchema } from '../src/simpleValidators';
 
 class Person {
   @acceptsObject()
@@ -16,6 +21,12 @@ class Person {
 
   @acceptsBoolean()
   getBoolean( obj ) { return true; }
+
+  @validateSchema( { test1: 'number', test2: 'object', test3: 'array' } );
+  getSchemaValidatedObject( obj ) { return true; }
+
+  @validateSchema( { test1: 'lol', test2: 'object' } );
+  getSchemaValidatedObject2( obj ) { return true; }
 }
 
 describe( 'validation tests', function () {
@@ -67,5 +78,22 @@ describe( 'validation tests', function () {
 
   it( '@acceptsBoolean: throw an Error if a non boolean is passed', function () {
     expect( p.getBoolean.bind( {}, 42.45 ) ).to.throw( Error );
+  } );
+
+  // @validateSchema
+  it( '@validateSchema: execute the function if the object is valid againts the schema', function () {
+    expect( p.getSchemaValidatedObject( { test1: 2, test2: {}, test3: [1,2,3] } ) ).to.equal( true );
+  } );
+
+  it( '@validateSchema: throw an Error if a non object is passed', function () {
+    expect( p.getSchemaValidatedObject.bind( {}, 42.45 ) ).to.throw( Error );
+  } );
+
+  it( '@validateSchema: throw an Error if a the object does not have a schema property', function () {
+    expect( p.getSchemaValidatedObject.bind( {}, { test1: 'something', test3: 'something' } ) ).to.throw( Error );
+  } );
+
+  it( '@validateSchema: throw an Error if a their is an invalid type in the schema definition', function () {
+    expect( p.getSchemaValidatedObject2.bind( {}, { test1: 'something', test2: 'something' } ) ).to.throw( Error );
   } );
 } );
