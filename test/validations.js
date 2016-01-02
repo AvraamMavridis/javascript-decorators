@@ -41,4 +41,13 @@ describe( 'validation tests', function () {
   it( '@acceptsArray: throw an Error if a non array is passed', function () {
     expect( p.getAnObject.bind( {}, 42 ) ).to.throw( Error );
   } );
+
+  // @acceptsInteger
+  it( '@acceptsInteger: execute the function if an integer is passed', function () {
+    expect( p.getAnInteger( 42 ) ).to.equal( true );
+  } );
+
+  it( '@acceptsInteger: throw an Error if a non integer is passed', function () {
+    expect( p.getAnInteger.bind( {}, {} ) ).to.throw( Error );
+  } );
 } );
