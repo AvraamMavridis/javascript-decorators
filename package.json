@@ -20,7 +20,9 @@
     ]
   },
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "deepcopy": "^0.6.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.3.17",
     "babel-core": "^6.1.18",
