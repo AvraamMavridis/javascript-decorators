@@ -65,6 +65,19 @@ export const isBoolean = function ( prop ) {
 };
 
 /**
+ * Tests if the prop is Function
+ *
+ * @method isBoolean
+ *
+ * @param  { any }  prop
+ *
+ * @return { Boolean }
+ */
+export const isFunction = function ( prop ) {
+  return typeof prop === 'function';
+};
+
+/**
  * validate a schema property
  *
  * @method _validateProperty
@@ -93,6 +106,9 @@ const _validateProperty = function ( property, type )
       break;
     case 'array':
       isValid = isArray( property );
+      break;
+    case 'function':
+      isValid = isFunction( property );
       break;
     default:
       throw Error( `${ type } invalid type` );

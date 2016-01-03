@@ -4,6 +4,7 @@ import { acceptsObject,
          acceptsInteger,
          acceptsNumber,
          acceptsBoolean,
+         acceptsFunction,
          validateSchema } from '../src/@validators';
 
 class Person {
@@ -22,7 +23,10 @@ class Person {
   @acceptsBoolean()
   getBoolean( obj ) { return true; }
 
-  @validateSchema( { test1: 'number', test2: 'object', test3: 'array' } );
+  @acceptsFunction()
+  getFunction( obj ) { return true; }
+
+  @validateSchema( { test1: 'number', test2: 'object', test3: 'array', test4: 'function' } );
   getSchemaValidatedObject( obj ) { return true; }
 
   @validateSchema( { test1: 'lol', test2: 'object' } );
@@ -80,9 +84,18 @@ describe( 'validation tests', function () {
     expect( p.getBoolean.bind( {}, 42.45 ) ).to.throw( Error );
   } );
 
+  // @acceptsFunction
+  it( '@acceptsFunction: execute the function if a function is passed', function () {
+    expect( p.getFunction( function(){} ) ).to.equal( true );
+  } );
+
+  it( '@acceptsFunction: throw an Error if a non boolean is passed', function () {
+    expect( p.getFunction.bind( {}, 42.45 ) ).to.throw( Error );
+  } );
+
   // @validateSchema
   it( '@validateSchema: execute the function if the object is valid againts the schema', function () {
-    expect( p.getSchemaValidatedObject( { test1: 2, test2: {}, test3: [1,2,3] } ) ).to.equal( true );
+    expect( p.getSchemaValidatedObject( { test1: 2, test2: {}, test3: [1,2,3], test4: function(){} } ) ).to.equal( true );
   } );
 
   it( '@validateSchema: throw an Error if a non object is passed', function () {

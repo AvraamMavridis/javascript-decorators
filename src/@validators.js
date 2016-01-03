@@ -4,7 +4,14 @@
 * @author  Avraam Mavridis      <avr.mav@gmail.com>
 *
 */
-import { isObject, isArray, isNumber, isInteger, isBoolean, isValidSchema } from './validationHelpers';
+import {
+  isObject,
+  isArray,
+  isNumber,
+  isInteger,
+  isBoolean,
+  isFunction,
+  isValidSchema } from './validationHelpers';
 
 /**
  * Base decorator function for validation
@@ -96,6 +103,19 @@ export const acceptsInteger = function ( position = 0 ) {
  */
 export const acceptsBoolean = function ( position = 0 ) {
   return _basefunc( position, isBoolean, ' is not a boolean' );
+};
+
+/**
+ * @acceptsFunction Decorator
+ *
+ * @method acceptsObject
+ *
+ * @param  { integer }  position = 0 Position of the property to validate
+ *
+ * @return { function }  Decorator
+ */
+export const acceptsFunction = function ( position = 0 ) {
+  return _basefunc( position, isFunction, ' is not a function' );
 };
 
 /**
