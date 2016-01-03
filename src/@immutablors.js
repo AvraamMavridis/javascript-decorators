@@ -1,14 +1,15 @@
 /**
-* Validation related decorators
+* Mutability related decorators
 *
 * @author  Avraam Mavridis      <avr.mav@gmail.com>
 *
 */
 
-import deepcopy from "deepcopy";
+import deepcopy from 'deepcopy';
+import deepEqual from 'deep-equal';
 
 /**
- * Base decorator function for validation
+ * Base decorator function for immutability
  *
  * @method _basefunc
  *
@@ -19,16 +20,30 @@ export const immutable = function () {
   return function ( key, target, descriptor )
   {
     const func = descriptor.value;
-    let newArgs;
-    let that;
     descriptor.value = function ( ...args )
     {
-      that = this;
-      newArgs = args.reduce( function ( previousval, currentval ) {
+      const newArgs = args.reduce( function ( previousval, currentval ) {
         previousval.push( deepcopy( currentval ) );
         return previousval;
       }, [] );
-      return func.apply( that, newArgs );
+      return func.apply( this, newArgs );
+    };
+    return descriptor;
+  };
+};
+
+export const doesNotMutate = function () {
+  return function ( key, target, descriptor )
+  {
+    const func = descriptor.value;
+    descriptor.value = function ( ...args )
+    {
+      const tempArgs = deepcopy( args );
+      const returnValue = func.apply( this, args );
+      if ( !deepEqual( args, tempArgs ) ) {
+        throw Error( `${target} mutates the passed values` );
+      }
+      return returnValue;
     };
   };
 };
