@@ -5,8 +5,7 @@
 *
 */
 
-import * as dp from "deepcopy";
-const deepcopy = dp.default;
+import deepcopy from "deepcopy";
 
 /**
  * Base decorator function for validation
