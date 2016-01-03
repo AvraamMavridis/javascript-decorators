@@ -22,8 +22,8 @@ class Person {
   @acceptsInteger()
   getAnInteger( obj ) { return true; }
 
-  @acceptsBoolean()
-  getBoolean( obj ) { return true; }
+  @acceptsBoolean([0,1])
+  getBoolean( obj, obj2 ) { return true; }
 
   @acceptsFunction()
   getFunction( obj ) { return true; }
@@ -82,7 +82,7 @@ describe( 'validation tests', function () {
 
   // @acceptsBoolean
   it( '@acceptsBoolean: execute the function if a boolean is passed', function () {
-    expect( p.getBoolean( true ) ).to.equal( true );
+    expect( p.getBoolean( true, true ) ).to.equal( true );
   } );
 
   it( '@acceptsBoolean: throw an Error if a non boolean is passed', function () {

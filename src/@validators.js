@@ -14,6 +14,18 @@ import {
   isPromise,
   isValidSchema } from './validationHelpers';
 
+const _getPropsToValidate = function( position = 0, args = [] )
+{
+  const positions = [].concat( position );
+  const props = [];
+  for ( const p of positions ) {
+    if ( !!args[ p ] ) {
+      props.push( args[ p ] );
+    }
+  }
+  return props;
+};
+
 /**
  * Base decorator function for validation
  *
@@ -26,16 +38,19 @@ import {
  * @return { function }  decorator function
  */
 const _basefunc = function ( position = 0, validationFunc, errorMsg ) {
+
   return function ( key, target, descriptor )
   {
     const func = descriptor.value;
     descriptor.value = function ( ...args )
     {
-      const prop = args[ position ];
-      if ( !validationFunc( prop ) )
-      {
-        throw Error( `${ prop } ${ errorMsg }` );
-      }
+      const props = _getPropsToValidate( position, args );
+      props.forEach( function ( prop ) {
+        if ( !validationFunc( prop ) )
+        {
+          throw Error( `${ prop } ${ errorMsg }` );
+        }
+      } );
       return func.apply( this, args );
     };
   };
