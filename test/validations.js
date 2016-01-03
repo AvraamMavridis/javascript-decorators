@@ -7,6 +7,7 @@ import { acceptsObject,
          acceptsBoolean,
          acceptsFunction,
          acceptsPromise,
+         acceptsString,
          validateSchema } from '../src/@validators';
 
 class Person {
@@ -30,6 +31,9 @@ class Person {
 
   @acceptsPromise()
   getPromise( obj ) { return true;  }
+
+  @acceptsString()
+  getString( obj ) { return true;  }
 
   @validateSchema( { test1: 'number', test2: 'object', test3: 'array', test4: 'function', test5: 'promise' } );
   getSchemaValidatedObject( obj ) { return true; }
@@ -105,6 +109,15 @@ describe( 'validation tests', function () {
 
   it( '@acceptsPromise: throw an Error if a non promise is passed', function () {
     expect( p.getPromise.bind( {}, 42.45 ) ).to.throw( Error );
+  } );
+
+  // @acceptsString
+  it( '@acceptsacceptsStringPromise: execute the function if a promise is passed', function () {
+    expect( p.getString( 'paok' ) ).to.equal( true );
+  } );
+
+  it( '@acceptsString: throw an Error if a non promise is passed', function () {
+    expect( p.getString.bind( {}, 42.45 ) ).to.throw( Error );
   } );
 
   // @validateSchema

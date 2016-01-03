@@ -13,6 +13,7 @@ import {
   isFunction,
   isPromise,
   isValidSchema,
+  isString,
   _basefunc } from './validationHelpers';
 
 /**
@@ -20,7 +21,7 @@ import {
  *
  * @method acceptsObject
  *
- * @param  { integer }  position = 0 Position of the property to validate
+ * @param  { integer|array }  position = 0 Position of the property to validate
  *
  * @return { function }  Decorator
  */
@@ -33,7 +34,7 @@ export const acceptsObject = function ( position = 0 ) {
  *
  * @method acceptsObject
  *
- * @param  { integer }  position = 0 Position of the property to validate
+ * @param  { integer|array }  position = 0 Position of the property to validate
  *
  * @return { function }  Decorator
  */
@@ -46,7 +47,7 @@ export const acceptsArray = function ( position = 0 ) {
  *
  * @method acceptsObject
  *
- * @param  { integer }  position = 0 Position of the property to validate
+ * @param  { integer|array }  position = 0 Position of the property to validate
  *
  * @return { function }  Decorator
  */
@@ -59,7 +60,7 @@ export const acceptsNumber = function ( position = 0 ) {
  *
  * @method acceptsObject
  *
- * @param  { integer }  position = 0 Position of the property to validate
+ * @param  { integer|array }  position = 0 Position of the property to validate
  *
  * @return { function }  Decorator
  */
@@ -72,7 +73,7 @@ export const acceptsInteger = function ( position = 0 ) {
  *
  * @method acceptsObject
  *
- * @param  { integer }  position = 0 Position of the property to validate
+ * @param  { integer|array }  position = 0 Position of the property to validate
  *
  * @return { function }  Decorator
  */
@@ -85,7 +86,7 @@ export const acceptsBoolean = function ( position = 0 ) {
  *
  * @method acceptsObject
  *
- * @param  { integer }  position = 0 Position of the property to validate
+ * @param  { integer|array }  position = 0 Position of the property to validate
  *
  * @return { function }  Decorator
  */
@@ -98,7 +99,7 @@ export const acceptsFunction = function ( position = 0 ) {
  *
  * @method acceptsObject
  *
- * @param  { integer }  position = 0 Position of the property to validate
+ * @param  { integer|array }  position = 0 Position of the property to validate
  *
  * @return { function }  Decorator
  */
@@ -107,12 +108,25 @@ export const acceptsPromise = function ( position = 0 ) {
 };
 
 /**
+ * @acceptsString Decorator
+ *
+ * @method acceptsString
+ *
+ * @param  { integer|array }  position = 0 Position of the property to validate
+ *
+ * @return { function }  Decorator
+ */
+export const acceptsString = function ( position = 0 ) {
+  return _basefunc( position, isString, ' is not a string' );
+};
+
+/**
  * @validateSchema Decorator
  *
  * @method acceptsObject
  *
  * @param  { object }  validation schema
- * @param  { integer }  position = 0 Position of the property to validate
+ * @param  { integer|array }  position = 0 Position of the property to validate
  *
  * @return { function }  Decorator
  */

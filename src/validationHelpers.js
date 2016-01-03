@@ -93,6 +93,19 @@ export const isPromise = function ( prop ) {
 };
 
 /**
+ * Tests if the prop is a String
+ *
+ * @method isString
+ *
+ * @param  { any }  prop
+ *
+ * @return { Boolean }
+ */
+export const isString = function ( prop ) {
+  return typeof prop === 'string';
+};
+
+/**
  * validate a schema property
  *
  * @method _validateProperty
@@ -124,6 +137,9 @@ const _validateProperty = function ( property, type )
       break;
     case 'function':
       isValid = isFunction( property );
+      break;
+    case 'string':
+      isValid = isString( property );
       break;
     case 'promise':
       isValid = isPromise( property );
