@@ -12,49 +12,8 @@ import {
   isBoolean,
   isFunction,
   isPromise,
-  isValidSchema } from './validationHelpers';
-
-const _getPropsToValidate = function( position = 0, args = [] )
-{
-  const positions = [].concat( position );
-  const props = [];
-  for ( const p of positions ) {
-    if ( !!args[ p ] ) {
-      props.push( args[ p ] );
-    }
-  }
-  return props;
-};
-
-/**
- * Base decorator function for validation
- *
- * @method _basefunc
- *
- * @param  { integer }   position        Position of the property to validate
- * @param  { function }  validationFunc  Validation function
- * @param  { string }    errorMsg        Error message in case of invalid
- *
- * @return { function }  decorator function
- */
-const _basefunc = function ( position = 0, validationFunc, errorMsg ) {
-
-  return function ( key, target, descriptor )
-  {
-    const func = descriptor.value;
-    descriptor.value = function ( ...args )
-    {
-      const props = _getPropsToValidate( position, args );
-      props.forEach( function ( prop ) {
-        if ( !validationFunc( prop ) )
-        {
-          throw Error( `${ prop } ${ errorMsg }` );
-        }
-      } );
-      return func.apply( this, args );
-    };
-  };
-};
+  isValidSchema,
+  _basefunc } from './validationHelpers';
 
 /**
  * @acceptsObject Decorator

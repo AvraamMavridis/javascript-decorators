@@ -169,5 +169,56 @@ export const isValidSchema = function ( schema, position = 0 ) {
       return func.apply( this, args );
     };
   };
+};
 
+/**
+ * Returns the positions to validate
+ *
+ * @method _getPropsToValidate
+ *
+ * @param  {[type]}            position = 0  [description]
+ * @param  {[type]}            args     = [] [description]
+ *
+ * @return {[type]}            [description]
+ */
+const _getPropsToValidate = function ( position = 0, args = [] )
+{
+  const positions = [].concat( position );
+  const props = [];
+  for ( const p of positions ) {
+    if ( !!args[ p ] ) {
+      props.push( args[ p ] );
+    }
+  }
+  return props;
+};
+
+/**
+ * Base decorator function for validation
+ *
+ * @method _basefunc
+ *
+ * @param  { integer }   position        Position of the property to validate
+ * @param  { function }  validationFunc  Validation function
+ * @param  { string }    errorMsg        Error message in case of invalid
+ *
+ * @return { function }  decorator function
+ */
+export const _basefunc = function ( position = 0, validationFunc, errorMsg ) {
+
+  return function ( key, target, descriptor )
+  {
+    const func = descriptor.value;
+    descriptor.value = function ( ...args )
+    {
+      const props = _getPropsToValidate( position, args );
+      props.forEach( function ( prop ) {
+        if ( !validationFunc( prop ) )
+        {
+          throw Error( `${ prop } ${ errorMsg }` );
+        }
+      } );
+      return func.apply( this, args );
+    };
+  };
 };
