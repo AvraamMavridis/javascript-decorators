@@ -52,7 +52,7 @@ export const isInteger = function ( prop ) {
 };
 
 /**
- * Tests if the prop is an integer
+ * Tests if the prop is Boolean
  *
  * @method isBoolean
  *
@@ -84,6 +84,9 @@ const _validateProperty = function ( property, type )
       break;
     case 'number':
       isValid = isNumber( property );
+      break;
+    case 'integer':
+      isValid = isInteger( property );
       break;
     case 'boolean':
       isValid = isBoolean( property );

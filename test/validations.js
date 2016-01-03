@@ -4,7 +4,7 @@ import { acceptsObject,
          acceptsInteger,
          acceptsNumber,
          acceptsBoolean,
-         validateSchema } from '../src/simpleValidators';
+         validateSchema } from '../src/@validators';
 
 class Person {
   @acceptsObject()
