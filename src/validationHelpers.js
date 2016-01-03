@@ -78,6 +78,21 @@ export const isFunction = function ( prop ) {
 };
 
 /**
+ * Tests if the prop is a Promise
+ *
+ * @method isPromise
+ *
+ * @param  { any }  prop
+ *
+ * @return { Boolean }
+ */
+export const isPromise = function ( prop ) {
+  return prop !== null &&
+   ( typeof prop === 'object' || typeof prop === 'function' ) &&
+    typeof prop.then === 'function';
+};
+
+/**
  * validate a schema property
  *
  * @method _validateProperty
@@ -109,6 +124,9 @@ const _validateProperty = function ( property, type )
       break;
     case 'function':
       isValid = isFunction( property );
+      break;
+    case 'promise':
+      isValid = isPromise( property );
       break;
     default:
       throw Error( `${ type } invalid type` );

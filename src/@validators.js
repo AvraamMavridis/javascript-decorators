@@ -11,6 +11,7 @@ import {
   isInteger,
   isBoolean,
   isFunction,
+  isPromise,
   isValidSchema } from './validationHelpers';
 
 /**
@@ -116,6 +117,19 @@ export const acceptsBoolean = function ( position = 0 ) {
  */
 export const acceptsFunction = function ( position = 0 ) {
   return _basefunc( position, isFunction, ' is not a function' );
+};
+
+/**
+ * @acceptsPromise Decorator
+ *
+ * @method acceptsObject
+ *
+ * @param  { integer }  position = 0 Position of the property to validate
+ *
+ * @return { function }  Decorator
+ */
+export const acceptsPromise = function ( position = 0 ) {
+  return _basefunc( position, isPromise, ' is not a promise' );
 };
 
 /**
