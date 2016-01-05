@@ -34,7 +34,7 @@ Common helpers using es7 decorators
 
 #### Performance related decorators
 
-[@memoization](#@memoization) :  Use the (memoization)[https://en.wikipedia.org/wiki/Memoization] technique to prevent expensive function calls.
+[@memoization](#@memoization) :  Use the [memoization](https://en.wikipedia.org/wiki/Memoization) technique to prevent expensive function calls.
 
 ### <a name="@validateSchema"></a>@validateSchema
 
