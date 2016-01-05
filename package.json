@@ -39,6 +39,8 @@
     "eslint-config-google": "^0.3.0",
     "eslint-plugin-react": "^3.11.2",
     "mocha": "^2.1.0",
-    "promise": "^7.1.1"
+    "promise": "^7.1.1",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0"
   }
 }
