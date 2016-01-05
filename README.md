@@ -40,3 +40,17 @@ class Person{
 }
 
   ``` 
+  
+### <a name="@acceptsObject"></a>@acceptsObject
+
+Executes the method only if the passed value is an object otherwise throws an exception, accepts position (default=0) or array of positions. Example:
+  
+  ```js
+
+class Person{
+  @acceptsObject( [0,2] );
+  doSomething( obj, str, obj ) { ... }
+}
+
+  ``` 
+
