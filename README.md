@@ -8,9 +8,9 @@ Method decorators:
 
 [@validateSchema](#@validateSchema) :  Executes the function only if the schema is valid
 
-<a name="acceptsObject">@acceptsObject</a>      :  Executes the function only if the passed arg is an object
+[@acceptsObject](#@acceptsObject)      :  Executes the function only if the passed arg is an object
 
-<a name="acceptsArray">@acceptsArray</a> :  Executes the function only if the passed arg is an array
+[@acceptsArray](#@acceptsArray) :  Executes the function only if the passed arg is an array
 
 <a name="acceptsInteger">@acceptsInteger</a> :  Executes the function only if the passed arg is an integer
 
