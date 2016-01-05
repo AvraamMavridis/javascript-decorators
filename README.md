@@ -4,7 +4,9 @@ Common helpers using es7 decorators
 
 ## Decorators
 
-Method decorators: 
+###Method decorators:
+
+#### Validation related decorators
 
 [@validateSchema](#@validateSchema) :  Executes the function only if the schema is valid
 
@@ -24,9 +26,11 @@ Method decorators:
 
 [@acceptsPromise](#@acceptsPromise):  Executes the function only if the passed arg is a promise
 
-<a name="immutable">@immutable</a> :  Makes a deepcopy of the passed arguments and executes the method with the copy to ensure that the initial parameters are not mutated
+#### Immutability related decorators
 
-<a name="doesNotMutate">@doesNotMutate</a> :  Executes the method only if it doesnt mutate the passed arguments. Useful when the class extends another class and/or calls methods from the parent.
+[@immutable](#@immutable) :  Makes a deepcopy of the passed arguments and executes the method with the copy to ensure that the initial parameters are not mutated
+
+[@doesNotMutate](#@doesNotMutate) :  Executes the method only if it doesnt mutate the passed arguments. Useful when the class extends another class and/or calls methods from the parent.
 
 ### <a name="@validateSchema"></a>@validateSchema
 
@@ -143,4 +147,41 @@ class Person{
   doSomething( prom ) { ... }
 }
 
+  ``` 
+  
+### <a name="@immutable"></a>@immutable
+
+Makes a deepcopy of the passed arguments and executes the method with the copy to ensure that the initial parameters are not mutated. Example: 
+  
+  ```js
+
+class Person{
+  @immutable();
+  doSomething( arg1 ) { 
+     arg1.test = 10;
+  }
+}
+
+var obj = { test: 5 };
+var p = new Person();
+p.dosomething( obj );
+console.log( obj.test ); // 5;
+  ``` 
+
+### <a name="@doesNotMutate"></a>@doesNotMutate
+
+Executes the method only if it doesnt mutate the passed arguments. Useful when the class extends another class and/or calls methods from the parent. Example: 
+  
+  ```js
+
+class Person{
+  @doesNotMutate();
+  doSomething( arg1 ) { 
+     arg1.test = 10;
+  }
+}
+
+var obj = { test: 5 };
+var p = new Person();
+p.dosomething( obj ); // throws an exception because doSomething mutates the passed object.
   ``` 
