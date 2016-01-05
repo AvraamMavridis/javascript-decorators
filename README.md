@@ -6,7 +6,7 @@ Common helpers using es7 decorators
 
 Method decorators: 
 
-<a name="validateSchema">@validateSchema</a> :  Executes the function only if the schema is valid
+[@validateSchema][]:  Executes the function only if the schema is valid
 
 <a name="acceptsObject">@acceptsObject</a>      :  Executes the function only if the passed arg is an object
 
@@ -28,6 +28,6 @@ Method decorators:
 
 <a name="doesNotMutate">@doesNotMutate</a> :  Executes the method only if it doesnt mutate the passed arguments. Useful when the class extends another class and/or calls methods from the parent.
 
-###[@validateSchema](#validateSchema)
+### @validateSchema ###
 
 ...
