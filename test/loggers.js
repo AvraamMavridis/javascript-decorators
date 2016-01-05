@@ -1,8 +1,9 @@
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import { log } from '../src/@loggers.js';
+import loggers, { log, loglocalstorage, getLocalStorage } from '../src/@loggers.js';
 
+console.log( getLocalStorage );
 chai.use( sinonChai );
 
 class Person {
@@ -10,9 +11,14 @@ class Person {
   doSomething( a, b ) {
     return a + b;
   }
+
+  @loglocalstorage()
+  doSomethingElse( a, b ) {
+    return a + b;
+  }
 };
 
-describe( 'immutablors tests', function () {
+describe( 'loggers tests', function () {
   let p;
   beforeEach( function () {
     p = new Person();
@@ -22,6 +28,7 @@ describe( 'immutablors tests', function () {
   afterEach(function() {
     console.log.restore();
   });
+
   // @log
   it( '@log: should not affect the function results', function () {
     expect( p.doSomething( 1, 2 ) ).to.equal( 3 );
@@ -31,5 +38,15 @@ describe( 'immutablors tests', function () {
     p.doSomething( 1, 2 )
     expect( console.log ).to.be.called;
   } );
+
+  // // @loglocalstorage
+  // it( '@loglocalstorage: should not affect the function results', function () {
+  //   expect( p.doSomethingElse( 1, 2 ) ).to.equal( 3 );
+  // } );
+  //
+  // it( '@loglocalstorage: call the console', function () {
+  //   p.doSomethingElse( 1, 2 )
+  //   expect( console.log ).to.be.called;
+  // } );
 
 });
