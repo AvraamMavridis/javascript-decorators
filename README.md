@@ -32,6 +32,10 @@ Common helpers using es7 decorators
 
 [@doesNotMutate](#@doesNotMutate) :  Executes the method only if it doesnt mutate the passed arguments. Useful when the class extends another class and/or calls methods from the parent.
 
+#### Performance related decorators
+
+[@memoization](#@memoization) :  Use the (memoization)[https://en.wikipedia.org/wiki/Memoization] technique to prevent expensive function calls.
+
 ### <a name="@validateSchema"></a>@validateSchema
 
 Executes the method only if the passed values are valid according to the provided **schema**. Example:
@@ -184,4 +188,21 @@ class Person{
 var obj = { test: 5 };
 var p = new Person();
 p.dosomething( obj ); // throws an exception because doSomething mutates the passed object.
+  ``` 
+
+### <a name="@memoization"></a>@memoization
+
+  ```js
+
+class Person{
+  @memoization();
+  doSomethingTimeConsuming( arg1 ) { 
+     arg1.test = 10;
+  }
+}
+
+var obj = { test: 5 };
+var p = new Person();
+p.doSomethingTimeConsuming( obj ); // calls the function
+p.doSomethingTimeConsuming( obj ); // immediately returns the result without calling the function
   ``` 
