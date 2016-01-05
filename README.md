@@ -36,6 +36,10 @@ Common helpers using es7 decorators
 
 [@memoization](#@memoization) :  Use the [memoization](https://en.wikipedia.org/wiki/Memoization) technique to prevent expensive function calls.
 
+#### Debugging & Developing decorators
+
+[@log](#@log) : Logs the passed values and the returned result.
+
 ### <a name="@validateSchema"></a>@validateSchema
 
 Executes the method only if the passed values are valid according to the provided **schema**. Example:
@@ -206,3 +210,22 @@ var p = new Person();
 p.doSomethingTimeConsuming( obj ); // calls the function
 p.doSomethingTimeConsuming( obj ); // immediately returns the result without calling the function
   ``` 
+  
+### <a name="@log"></a>@log
+
+  ```js
+
+class Person{
+  @log();
+  doSomething(...args){
+    return args.join('-');
+  }
+}
+
+var p = new Person();
+p.doSomethingTimeConsuming( 2 , 3 ); 
+  ``` 
+Will log in the console:
+
+![Logged on console](http://oi64.tinypic.com/120ta1c.jpg "Logged on console")
+
