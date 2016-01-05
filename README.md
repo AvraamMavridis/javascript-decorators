@@ -12,17 +12,17 @@ Method decorators:
 
 [@acceptsArray](#@acceptsArray) :  Executes the function only if the passed arg is an array
 
-<a name="acceptsInteger">@acceptsInteger</a> :  Executes the function only if the passed arg is an integer
+[@acceptsInteger](#@acceptsInteger) :   Executes the function only if the passed arg is an integer
 
-<a name="acceptsNumber">@acceptsNumber</a> :  Executes the function only if the passed arg is a number
+[@acceptsNumber](#@acceptsNumber):  Executes the function only if the passed arg is a number
 
-<a name="acceptsBoolean">@acceptsBoolean</a> :  Executes the function only if the passed arg is a boolean
+[@acceptsBoolean](#@acceptsBoolean):  Executes the function only if the passed arg is a boolean
 
-<a name="acceptsFunction">@acceptsFunction</a> :  Executes the function only if the passed arg is a function
+[@acceptsFunction](#@acceptsFunction):  Executes the function only if the passed arg is a function
 
-<a name="acceptsString">@acceptsString</a> :  Executes the function only if the passed arg is a string
+[@acceptsString](#@acceptsString):  Executes the function only if the passed arg is a string
 
-<a name="acceptsPromise">@acceptsPromise</a> :  Executes the function only if the passed arg is a promise
+[@acceptsPromise](#@acceptsPromise):  Executes the function only if the passed arg is a promise
 
 <a name="immutable">@immutable</a> :  Makes a deepcopy of the passed arguments and executes the method with the copy to ensure that the initial parameters are not mutated
 
@@ -53,4 +53,94 @@ class Person{
 }
 
   ``` 
+  
+### <a name="@acceptsArray"></a>@acceptsArray
 
+Executes the method only if the passed value is an array otherwise throws an exception, accepts position (default=0) or array of positions. Example:
+  
+  ```js
+
+class Person{
+  @acceptsArray();
+  doSomething( arr ) { ... }
+}
+
+  ``` 
+
+### <a name="@acceptsString"></a>@acceptsString
+
+Executes the method only if the passed value is a string otherwise throws an exception, accepts position (default=0) or array of positions. Example:
+  
+  ```js
+
+class Person{
+  @acceptsString();
+  doSomething( str ) { ... }
+}
+
+  ``` 
+  
+### <a name="@acceptsInteger"></a>@acceptsInteger
+
+Executes the method only if the passed value is an integer otherwise throws an exception, accepts position (default=0) or array of positions. Example:
+  
+  ```js
+
+class Person{
+  @acceptsInteger();
+  doSomething( int ) { ... }
+}
+
+  ```
+  
+### <a name="@acceptsNumber"></a>@acceptsNumber
+
+Executes the method only if the passed value is a number otherwise throws an exception, accepts position (default=0) or array of positions. Example:
+  
+  ```js
+
+class Person{
+  @acceptsNumber();
+  doSomething( number ) { ... }
+}
+
+  ``` 
+  
+### <a name="@acceptsBoolean"></a>@acceptsBoolean
+
+Executes the method only if the passed value is a boolean otherwise throws an exception, accepts position (default=0) or array of positions. Example:
+  
+  ```js
+
+class Person{
+  @acceptsBoolean();
+  doSomething( bol ) { ... }
+}
+
+  ``` 
+  
+### <a name="@acceptsFunction"></a>@acceptsFunction
+
+Executes the method only if the passed value is a function otherwise throws an exception, accepts position (default=0) or array of positions. Example:
+  
+  ```js
+
+class Person{
+  @acceptsFunction();
+  doSomething( func ) { ... }
+}
+
+  ``` 
+  
+### <a name="@acceptsPromise"></a>@acceptsPromise
+
+Executes the method only if the passed value is a promise otherwise throws an exception, accepts position (default=0) or array of positions. Example:
+  
+  ```js
+
+class Person{
+  @acceptsPromise();
+  doSomething( prom ) { ... }
+}
+
+  ``` 
