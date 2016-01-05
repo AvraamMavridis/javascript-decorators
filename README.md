@@ -30,4 +30,13 @@ Method decorators:
 
 ### <a name="@validateSchema"></a>@validateSchema
 
-...
+Executes the method only if the passed values are valid according to the provided **schema**. Example:
+
+```js
+
+class Person{
+  @validateSchema( { age: 'number', childs: 'object', jobs: 'array', name: 'string' } );
+  setPersonDetails( obj ) { ... }
+}
+
+  ``` 
