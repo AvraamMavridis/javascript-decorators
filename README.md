@@ -38,7 +38,7 @@ Common helpers using es7 decorators
 
 #### Debugging & Developing decorators
 
-[@log](#@logs) : Logs the passed values and the returned result.
+[@log](#@log) : Logs the passed values and the returned result.
 
 ### <a name="@validateSchema"></a>@validateSchema
 
