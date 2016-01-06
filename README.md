@@ -1,6 +1,29 @@
+# javascript-decorators
+
+[![npm version](https://badge.fury.io/js/javascript-decorators.svg)](https://badge.fury.io/js/javascript-decorators)
+
 [![Build Status](https://travis-ci.org/AvraamMavridis/Couturier.js.svg?branch=master)](https://travis-ci.org/AvraamMavridis/Couturier.js)
 
 Common helpers using es7 decorators
+
+## How to use
+
+[![NPM](https://nodei.co/npm/javascript-decorators.png?compact=true)](https://nodei.co/npm/javascript-decorators/)
+
+`npm i --save javascript-decorators`
+
+And then to use a decorator just import it:
+
+```js
+import { log } from 'javascript-decorators'
+
+class Person{
+  @log()
+  doSomething(){
+    ...
+  }
+}
+```
 
 ## Decorators
 
