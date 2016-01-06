@@ -21,12 +21,12 @@
     ]
   },
   "keywords": [
-    "javascript-decorators", 
-    "js-decorators", 
-    "core-decorators", 
-    "decorate", 
-    "aspects", 
-    "aop", 
+    "javascript-decorators",
+    "js-decorators",
+    "core-decorators",
+    "decorate",
+    "aspects",
+    "aop",
     "aspect-orianted-programing",
     "es6",
     "es7",
@@ -41,7 +41,7 @@
     "memoization",
     "immutable",
     "immutability"
-  ]
+  ],
   "license": "ISC",
   "dependencies": {
     "deep-equal": "^1.0.1",
