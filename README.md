@@ -42,6 +42,11 @@ Common helpers using es7 decorators
 
 [@loglocalstorage](#@loglocalstorage) : Logs the size of the localstorage before and after the function call.
 
+### Time related decorators
+
+[@timeout](#@timeout) (alias: @debounce)  : Executes the function after the specified wait (default 300ms)
+
+
 ### <a name="@validateSchema"></a>@validateSchema
 
 Executes the method only if the passed values are valid according to the provided **schema**. Example:
@@ -225,9 +230,44 @@ class Person{
 }
 
 var p = new Person();
-p.doSomethingTimeConsuming( 2 , 3 ); 
+p.doSomething( 2 , 3 ); 
   ``` 
 Will log in the console:
 
 ![Logged on console](http://oi64.tinypic.com/120ta1c.jpg "Logged on console")
+
+
+### <a name="@loglocalstorage"></a>@loglocalstorage
+
+  ```js
+
+class Person{
+  @loglocalstorage()
+  doSomething(){
+    localStorage.setItem('somethingonlocalstorage', "Lorem ipsum dol'or sit amet, consectetur adipiscing elit. Morbi congue urna id enim lobortis placerat. Integer commodo nulla in ipsum pharetra, ac malesuada tellus viverra. Integer aliquam semper nisi vehicula lobortis. Ut vel felis nec sem sollicitudin eleifend. Ut sem magna, vehicula in dui in, sodales ultrices arcu. Aliquam suscipit sagittis aliquet. Phasellus convallis faucibus massa, quis tincidunt nisl accumsan sed.")
+  }
+}
+
+var p = new Person();
+p.doSomething( ); 
+  ``` 
+Will log in the console something like:
+
+![Logged on console](http://oi68.tinypic.com/n33tzo.jpg "Logged on console")
+
+
+### <a name="@timeout"></a>@timeout (alias: @debounce)
+
+  ```js
+
+class Person{
+  @timeout( 2000 );
+  doSomething(){
+    ...
+  }
+}
+
+var p = new Person();
+p.doSomething(); // Executed after 2secs
+  ``` 
 
