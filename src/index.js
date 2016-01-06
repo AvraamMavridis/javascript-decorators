@@ -11,7 +11,7 @@ import { _acceptsObject,
 import { _memoization } from './@memoizator';
 import { _debounce } from './@timers';
 import { _loglocalstorage, _log } from './@loggers';
-import { _once, _times } from './@executors';
+import { _once, _times, _timesCalled } from './@executors';
 
 
 export const immutable = _immutable;
@@ -31,3 +31,4 @@ export const loglocalstorage = _loglocalstorage;
 export const log = _log;
 export const once = _once;
 export const times = _times;
+export const timesCalled = _timesCalled;

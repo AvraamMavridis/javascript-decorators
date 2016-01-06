@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { once, times } from '../src/index.js';
+import { once, times, timesCalled } from '../src/index.js';
 
 class Person {
   @once()
@@ -9,6 +9,11 @@ class Person {
 
   @times(2)
   doSomethingElse( a, b ) {
+    return a + b;
+  }
+
+  @timesCalled()
+  doSomethingElseThanElse( a, b ) {
     return a + b;
   }
 };
@@ -31,6 +36,16 @@ describe( 'executors tests', function () {
     expect( p.doSomethingElse(1,2) ).to.equal( 3 );
     expect( p.doSomethingElse(3,2) ).to.equal( 5 );
     expect( p.doSomethingElse(33,12) ).to.equal( 5 );
+  } );
+
+  // @timesCalled
+  it( '@timesCalled: it should have a parameter indicating how many times the function has been called', function () {
+    p.doSomethingElseThanElse(1,2);
+    p.doSomethingElseThanElse(1,2);
+    expect( p.doSomethingElseThanElse.timesCalled ).to.equal( 2 );
+    p.doSomethingElseThanElse(1,2);
+    p.doSomethingElseThanElse(1,2);
+    expect( p.doSomethingElseThanElse.timesCalled ).to.equal( 4 );
   } );
 
 });

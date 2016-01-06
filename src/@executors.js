@@ -31,5 +31,19 @@ const __times = function ( times = 1 ) {
   };
 };
 
+const __timesCalled = function () {
+  return function ( target, key, descriptor ) {
+    const func = descriptor.value;
+    descriptor.value = function ( ...args )
+    {
+      descriptor.value.timesCalled = descriptor.value.timesCalled || 0;
+      descriptor.value.timesCalled++;
+      return func.apply( this, args );
+    };
+    return descriptor;
+  };
+};
+
 export const _times = __times;
 export const _once = __times.bind( {}, 1 );
+export const _timesCalled = __timesCalled;
