@@ -89,7 +89,7 @@ export const _loglocalstorage = function () {
       console.log( '%c Local Storage Size Before Function Call: ', 'background: #222; color: #bada55', `${sizeBefore} MB` );
       const res = func.apply( this, args );
       const sizeAfter = _getLocalStorageSize();
-      console.log( '%c Local Storage Size After Function Call : ', 'background: #222; color: #bada55', `${sizeAfter} MB` );
+      console.log( '%c Local Storage Size After Function Call : ', 'background: #bada55; color: #222', `${sizeAfter} MB` );
       return res;
     };
     return descriptor;
