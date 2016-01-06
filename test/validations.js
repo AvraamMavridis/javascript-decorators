@@ -8,7 +8,7 @@ import { acceptsObject,
          acceptsFunction,
          acceptsPromise,
          acceptsString,
-         validateSchema } from '../src/@validators';
+         validateSchema } from '../src/index.js';
 
 class Person {
   @acceptsObject()

@@ -5,7 +5,7 @@
 *
 */
 
-export const memoization = function () {
+export const _memoization = function () {
   const cache = new Map();
 
   return function ( key, target, descriptor )

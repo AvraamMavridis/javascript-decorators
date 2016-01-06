@@ -1,9 +1,9 @@
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import loggers, { log, loglocalstorage, getLocalStorage } from '../src/@loggers.js';
+import loggers, { log, loglocalstorage, getLocalStorage } from '../src/index.js';
 
-console.log( getLocalStorage );
+
 chai.use( sinonChai );
 
 class Person {

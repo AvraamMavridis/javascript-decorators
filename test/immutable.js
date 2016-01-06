@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { immutable, doesNotMutate } from '../src/@immutablors.js';
+import { immutable, doesNotMutate } from '../src/index.js';
 
 class Person {
   @immutable()

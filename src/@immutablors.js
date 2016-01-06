@@ -16,7 +16,7 @@ import deepEqual from 'deep-equal';
  *
  * @return { function }  decorator function
  */
-export const immutable = function () {
+export const _immutable = function () {
   return function ( key, target, descriptor )
   {
     const func = descriptor.value;
@@ -32,7 +32,7 @@ export const immutable = function () {
   };
 };
 
-export const doesNotMutate = function () {
+export const _doesNotMutate = function () {
   return function ( key, target, descriptor )
   {
     const func = descriptor.value;

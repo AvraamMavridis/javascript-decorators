@@ -13,7 +13,7 @@
  * @param  { number } wait = 300
  *
  */
-const _timeout = function ( wait = 300 ) {
+const __timeout = function ( wait = 300 ) {
   const debounceKeys = {};
 
   return function ( key, target, descriptor )
@@ -31,5 +31,5 @@ const _timeout = function ( wait = 300 ) {
   };
 };
 
-export const timeout = _timeout;
-export const debounce = _timeout;
+export const _timeout = __timeout;
+export const _debounce = __timeout;

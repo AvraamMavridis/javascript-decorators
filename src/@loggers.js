@@ -11,7 +11,7 @@
  * @method log
  *
  */
-export const log = function () {
+export const _log = function () {
   return function ( key, target, descriptor )
   {
     const func = descriptor.value;
@@ -33,7 +33,7 @@ export const log = function () {
  *
  * @return { object }
  */
-export const getLocalStorage = function ()
+export const _getLocalStorage = function ()
 {
   return localStorage;
 };
@@ -47,7 +47,7 @@ export const getLocalStorage = function ()
  */
 const _getLocalStorageItems = function ()
 {
-  const _localStorage = getLocalStorage();
+  const _localStorage = _getLocalStorage();
   let sizes = Object.keys( _localStorage );
   sizes = sizes.map( function ( key ) {
     const obj = {};
@@ -78,7 +78,7 @@ const _getLocalStorageSize = function ()
  * @method loglocalstorage
  *
  */
-export const loglocalstorage = function () {
+export const _loglocalstorage = function () {
 
   return function ( key, target, descriptor )
   {
