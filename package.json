@@ -1,10 +1,10 @@
 {
   "name": "javascript-decorators",
-  "version": "0.0.2",
-  "homepage": "https://github.com/AvraamMavridis/jsdecorators",
+  "version": "0.1.0",
+  "homepage": "https://github.com/AvraamMavridis/javascript-decorators",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AvraamMavridis/jsdecorators"
+    "url": "https://github.com/AvraamMavridis/javascript-decorators"
   },
   "main": "./index.js",
   "author": "Avraam Mavridis <avr.mav@gmail.com>",
@@ -20,6 +20,28 @@
       "compile"
     ]
   },
+  "keywords": [
+    "javascript-decorators", 
+    "js-decorators", 
+    "core-decorators", 
+    "decorate", 
+    "aspects", 
+    "aop", 
+    "aspect-orianted-programing",
+    "es6",
+    "es7",
+    "es2015",
+    "es2016",
+    "babel",
+    "decorators",
+    "java",
+    "annotations",
+    "mixin",
+    "validateSchema",
+    "memoization",
+    "immutable",
+    "immutability"
+  ]
   "license": "ISC",
   "dependencies": {
     "deep-equal": "^1.0.1",
