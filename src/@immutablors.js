@@ -45,5 +45,6 @@ export const _doesNotMutate = function () {
       }
       return returnValue;
     };
+    return descriptor;
   };
 };

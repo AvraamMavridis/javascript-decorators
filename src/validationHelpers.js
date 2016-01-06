@@ -184,6 +184,7 @@ export const _isValidSchema = function ( schema, position = 0 ) {
       }
       return func.apply( this, args );
     };
+    return descriptor;
   };
 };
 
@@ -236,5 +237,7 @@ export const _basefunc = function ( position = 0, validationFunc, errorMsg ) {
       } );
       return func.apply( this, args );
     };
+
+    return descriptor;
   };
 };
