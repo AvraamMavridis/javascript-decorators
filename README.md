@@ -40,6 +40,8 @@ Common helpers using es7 decorators
 
 [@log](#@log) : Logs the passed values and the returned result.
 
+[@loglocalstorage](#@loglocalstorage) : Logs the size of the localstorage before and after the function call.
+
 ### <a name="@validateSchema"></a>@validateSchema
 
 Executes the method only if the passed values are valid according to the provided **schema**. Example:
