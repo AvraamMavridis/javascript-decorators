@@ -1,0 +1,7 @@
+.babelrc
+.eslintignore
+.eslintrc
+.gitignore
+.travis.yml
+npm-debug.log
+test/

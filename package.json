@@ -1,11 +1,12 @@
 {
-  "name": "jsdecorators",
-  "version": "0.0.0",
+  "name": "javascript-decorators",
+  "version": "0.0.2",
   "homepage": "https://github.com/AvraamMavridis/jsdecorators",
   "repository": {
     "type": "git",
     "url": "https://github.com/AvraamMavridis/jsdecorators"
   },
+  "main": "./index.js",
   "author": "Avraam Mavridis <avr.mav@gmail.com>",
   "description": "Decorator Helpers",
   "scripts": {
