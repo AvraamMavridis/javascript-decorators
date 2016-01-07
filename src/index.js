@@ -1,34 +1,30 @@
-import { _immutable, _doesNotMutate } from './@immutablors.js';
-import { _acceptsObject,
-         _acceptsArray,
-         _acceptsInteger,
-         _acceptsNumber,
-         _acceptsBoolean,
-         _acceptsFunction,
-         _acceptsPromise,
-         _acceptsString,
-         _validateSchema } from './@validators';
-import { _memoization } from './@memoizator';
-import { _debounce } from './@timers';
-import { _loglocalstorage, _log } from './@loggers';
-import { _once, _times, _timesCalled } from './@executors';
+/**
+* Decorators
+*
+* @author  Avraam Mavridis      <avr.mav@gmail.com>
+*
+*/
 
+export { _immutable        as immutable,
+         _doesNotMutate    as doesNotMutate } from './@immutablors.js';
 
-export const immutable = _immutable;
-export const doesNotMutate = _doesNotMutate;
-export const acceptsArray = _acceptsArray;
-export const acceptsObject = _acceptsObject;
-export const acceptsInteger = _acceptsInteger;
-export const acceptsNumber = _acceptsNumber;
-export const acceptsBoolean = _acceptsBoolean;
-export const acceptsFunction = _acceptsFunction;
-export const acceptsPromise = _acceptsPromise;
-export const acceptsString = _acceptsString;
-export const validateSchema = _validateSchema;
-export const memoization = _memoization;
-export const debounce = _debounce;
-export const loglocalstorage = _loglocalstorage;
-export const log = _log;
-export const once = _once;
-export const times = _times;
-export const timesCalled = _timesCalled;
+export { _acceptsArray     as acceptsArray,
+         _acceptsObject    as acceptsObject,
+         _acceptsInteger   as acceptsInteger,
+         _acceptsNumber    as acceptsNumber,
+         _acceptsBoolean   as acceptsBoolean,
+         _acceptsFunction  as acceptsFunction,
+         _acceptsPromise   as acceptsPromise,
+         _acceptsString    as acceptsString,
+         _validateSchema   as validateSchema } from './@validators.js';
+
+export { _memoization      as memoization } from './@memoizator';
+
+export { _debounce         as debounce    } from './@timers';
+
+export { _loglocalstorage  as loglocalstorage,
+         _log              as log } from './@loggers';
+
+export { _once             as once,
+         _times            as times,
+         _timesCalled      as timesCalled } from './@executors';
