@@ -2,9 +2,11 @@
 
 [![npm version](https://badge.fury.io/js/javascript-decorators.svg)](https://badge.fury.io/js/javascript-decorators)
 
-[![Build Status](https://travis-ci.org/AvraamMavridis/Couturier.js.svg?branch=master)](https://travis-ci.org/AvraamMavridis/Couturier.js)
+[![Build Status](https://travis-ci.org/AvraamMavridis/javascript-decorators.svg?branch=master)](https://travis-ci.org/AvraamMavridis/javascript-decorators)
 
 Common helpers using es7 decorators
+
+![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
 ## How to use
 
@@ -68,6 +70,16 @@ class Person{
 ### Time related decorators
 
 [@timeout](#@timeout) (alias: @debounce)  : Executes the function after the specified wait (default 300ms)
+
+### Execution related decorators
+
+[@once()](#@once()) : Executes the function only once. Repeat calls return the value of the first call.
+
+[@times(n)](#@times(n)) : Executes the function at most `n` times. Repeat calls return the value of the **nth** call.
+
+[@timesCalled()](#@timesCalled()) : Attaches a `timesCalled` property to the function that indicates how many times the function has been called.
+
+![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
 
 ### <a name="@validateSchema"></a>@validateSchema
@@ -293,4 +305,21 @@ class Person{
 var p = new Person();
 p.doSomething(); // Executed after 2secs
   ``` 
+  
+![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
+## Changelog
+
+2016-01-06
+==========
+
+  * @timesCalled decorator
+  * @once and @times decorators
+  * Fix color on console.log of @loglocalstorage
+  * Always return the descriptor to be able to chain decorators
+  * Fix package.json
+  * Update package.json
+  * Update README.md
+  * npmignore, index entry file, update package
+  * Small refactor
+  * @timeout, @debounce decorators
