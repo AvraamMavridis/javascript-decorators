@@ -79,6 +79,9 @@ class Person{
 
 [@timesCalled()](#@timesCalled()) : Attaches a `timesCalled` property to the function that indicates how many times the function has been called.
 
+###Method & Parameter decorators:
+[@readony()](#@readonly()), [@enumerable()](#@readonly()), [@nonenumerable()](#@readonly()), [@configurable()](#@readonly()), [@nonconfigurable()](#@readonly()), 
+
 ![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
 
