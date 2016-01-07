@@ -305,6 +305,60 @@ class Person{
 var p = new Person();
 p.doSomething(); // Executed after 2secs
   ``` 
+
+
+### <a name="@once()"></a>@once()
+
+  ```js
+
+class Person{
+  @once();
+  doSomething(a, b){
+    return a + b;
+  }
+}
+
+var p = new Person();
+p.doSomething(1,2); // returns 3
+p.doSomething(21,2); // keeps returning 3
+p.doSomething(14,42); // keeps returning 3
+  ``` 
+  
+### <a name="@times(n)"></a>@times(n)
+
+  ```js
+
+class Person{
+  @times(2);
+  doSomething(a, b){
+    return a + b;
+  }
+}
+
+var p = new Person();
+p.doSomething(1,2); // returns 3
+p.doSomething(21,2); // returns 23
+p.doSomething(14,42); // keeps returning 23
+p.doSomething(14,542); // keeps returning 23
+  ``` 
+  
+### <a name="@timesCalled()"></a>@timesCalled()
+
+  ```js
+
+class Person{
+  @timesCalled();
+  doSomething(a, b){
+    return a + b;
+  }
+}
+
+var p = new Person();
+p.doSomething(1,2); // returns 3
+p.doSomething(21,2); // returns 23
+p.doSomething(14,42); // keeps returning 23
+console.log( p.doSomething.timesCalled ); // 3
+  ``` 
   
 ![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
