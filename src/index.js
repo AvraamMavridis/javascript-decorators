@@ -28,3 +28,9 @@ export { _loglocalstorage  as loglocalstorage,
 export { _once             as once,
          _times            as times,
          _timesCalled      as timesCalled } from './@executors';
+
+export { _readonly         as readonly,
+         _enumerable       as enumerable,
+         _nonenumerable    as nonenumerable,
+         _configurable     as configurable,
+         _nonconfigurable  as nonconfigurable } from './@stators';

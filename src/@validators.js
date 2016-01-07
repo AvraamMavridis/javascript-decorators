@@ -25,7 +25,7 @@ import {
  *
  * @return { function }  Decorator
  */
-export const _acceptsObject = function ( position = 0 ) {
+export const _acceptsObject = function ( position = 0, failSilent = false ) {
   return _basefunc( position, _isObject, ' is not an object' );
 };
 
@@ -38,8 +38,8 @@ export const _acceptsObject = function ( position = 0 ) {
  *
  * @return { function }  Decorator
  */
-export const _acceptsArray = function ( position = 0 ) {
-  return _basefunc( position, _isArray, ' is not an array' );
+export const _acceptsArray = function ( position = 0, failSilent = false ) {
+  return _basefunc( position, _isArray, ' is not an array', failSilent );
 };
 
 /**
@@ -51,8 +51,8 @@ export const _acceptsArray = function ( position = 0 ) {
  *
  * @return { function }  Decorator
  */
-export const _acceptsNumber = function ( position = 0 ) {
-  return _basefunc( position, _isNumber, ' is not a number' );
+export const _acceptsNumber = function ( position = 0, failSilent = false ) {
+  return _basefunc( position, _isNumber, ' is not a number', failSilent );
 };
 
 /**
@@ -64,8 +64,8 @@ export const _acceptsNumber = function ( position = 0 ) {
  *
  * @return { function }  Decorator
  */
-export const _acceptsInteger = function ( position = 0 ) {
-  return _basefunc( position, _isInteger, ' is not an integer' );
+export const _acceptsInteger = function ( position = 0, failSilent = false ) {
+  return _basefunc( position, _isInteger, ' is not an integer', failSilent );
 };
 
 /**
@@ -77,8 +77,8 @@ export const _acceptsInteger = function ( position = 0 ) {
  *
  * @return { function }  Decorator
  */
-export const _acceptsBoolean = function ( position = 0 ) {
-  return _basefunc( position, _isBoolean, ' is not a boolean' );
+export const _acceptsBoolean = function ( position = 0, failSilent = false ) {
+  return _basefunc( position, _isBoolean, ' is not a boolean', failSilent );
 };
 
 /**
@@ -90,8 +90,8 @@ export const _acceptsBoolean = function ( position = 0 ) {
  *
  * @return { function }  Decorator
  */
-export const _acceptsFunction = function ( position = 0 ) {
-  return _basefunc( position, _isFunction, ' is not a function' );
+export const _acceptsFunction = function ( position = 0, failSilent = false ) {
+  return _basefunc( position, _isFunction, ' is not a function', failSilent );
 };
 
 /**
@@ -103,8 +103,8 @@ export const _acceptsFunction = function ( position = 0 ) {
  *
  * @return { function }  Decorator
  */
-export const _acceptsPromise = function ( position = 0 ) {
-  return _basefunc( position, _isPromise, ' is not a promise' );
+export const _acceptsPromise = function ( position = 0, failSilent = false ) {
+  return _basefunc( position, _isPromise, ' is not a promise', failSilent );
 };
 
 /**
@@ -116,8 +116,8 @@ export const _acceptsPromise = function ( position = 0 ) {
  *
  * @return { function }  Decorator
  */
-export const _acceptsString = function ( position = 0 ) {
-  return _basefunc( position, _isString, ' is not a string' );
+export const _acceptsString = function ( position = 0, failSilent = false ) {
+  return _basefunc( position, _isString, ' is not a string', failSilent );
 };
 
 /**
@@ -130,6 +130,6 @@ export const _acceptsString = function ( position = 0 ) {
  *
  * @return { function }  Decorator
  */
-export const _validateSchema = function ( schema, position = 0 ) {
-  return _isValidSchema( schema, position );
+export const _validateSchema = function ( schema, position = 0, failSilent = false ) {
+  return _isValidSchema( schema, position, failSilent );
 };

@@ -221,7 +221,7 @@ const _getPropsToValidate = function ( position = 0, args = [] )
  *
  * @return { function }  decorator function
  */
-export const _basefunc = function ( position = 0, validationFunc, errorMsg ) {
+export const _basefunc = function ( position = 0, validationFunc, errorMsg, failSilent ) {
 
   return function ( key, target, descriptor )
   {
@@ -232,6 +232,7 @@ export const _basefunc = function ( position = 0, validationFunc, errorMsg ) {
       props.forEach( function ( prop ) {
         if ( !validationFunc( prop ) )
         {
+          if ( failSilent ) return;
           throw Error( `${ prop } ${ errorMsg }` );
         }
       } );
