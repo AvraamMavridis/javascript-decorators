@@ -33,6 +33,17 @@ class Person{
 
 ###Method decorators:
 
++ **@overridden()** The method can be called from an instance of the base class, but cannot be called from an instance of a derived class. The derived class has to define its own version.
+
++ **@forceoverridden()** This is a more strict version of the previous. The method cannot be called from an instance of the base class or derived class. The derived class has to define its own version. Not particularly useful, mostly as a signal that the method has to be implemented on the subclass.
+
++ **@once()** : Executes the function only once. Repeat calls return the value of the first call.
+
++ **@times(n)** : Executes the function at most `n` times. Repeat calls return the value of the **nth** call.
+*n: number*
+
++ **@timesCalled()** : Attaches a `timesCalled` property to the function that indicates how many times the function has been called.
+
 + **@validateSchema( schema )** :  Executes the function only if the schema is valid, 
 *schema: object*
 
@@ -75,13 +86,6 @@ class Person{
 *ms: number*
 
 + **@defer()**  : Executes the function when the current call stack has cleared
-
-+ **@once()** : Executes the function only once. Repeat calls return the value of the first call.
-
-+ **@times(n)** : Executes the function at most `n` times. Repeat calls return the value of the **nth** call.
-*n: number*
-
-+ **@timesCalled()** : Attaches a `timesCalled` property to the function that indicates how many times the function has been called.
 
 ###Method & Property decorators:
 
