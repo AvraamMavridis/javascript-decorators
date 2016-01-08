@@ -99,6 +99,14 @@ class Person{
 
 ## <a name="Changelog"></a>Changelog 
 
+2016-01-08 Version 0.3.2
+==========
+
+  * Update README
+  * @donotlog, @donotlogerrors, @donotlogmessages, @donotlogwarnings decorators
+  * Noop helper function
+
+
 2016-01-08 Version 0.3.1
 ==========
 
