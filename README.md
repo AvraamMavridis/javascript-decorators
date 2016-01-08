@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/AvraamMavridis/javascript-decorators.svg?branch=master)](https://travis-ci.org/AvraamMavridis/javascript-decorators)
 
-Common helpers using es7 decorators. 
+Common helpers using es7 decorators.
 
 You can see the [Changelog](#Changelog) for the version specific changes.
 
@@ -33,10 +33,10 @@ class Person{
 
 ###Method decorators:
 
-+ **@validateSchema( schema )** :  Executes the function only if the schema is valid, 
++ **@validateSchema( schema )** :  Executes the function only if the schema is valid,
 *schema: object*
 
-+ **@acceptsObject( positions, failSilent )**      :  Executes the function only if the passed arg is an object 
++ **@acceptsObject( positions, failSilent )**      :  Executes the function only if the passed arg is an object
 *positions: number|array (optional, default 0), failSilent: boolean(optional, default false)*
 
 + **@acceptsArray( positions, failSilent )** :  Executes the function only if the passed arg is an array
@@ -83,21 +83,21 @@ class Person{
 
 + **@timesCalled()** : Attaches a `timesCalled` property to the function that indicates how many times the function has been called.
 
++ **@enumerable()**
+
 ###Method & Property decorators:
 
 + **@readony()**
 
-+ **@enumerable()**
++ **@nonconfigurable()**
+
+### Property decorators:
 
 + **@nonenumerable()**
 
-+ **@configurable()**
-
-+ **@nonconfigurable()**
-
 ![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
-## <a name="Changelog"></a>Changelog 
+## <a name="Changelog"></a>Changelog
 
 2016-01-08 Version 0.3.2
 ==========
@@ -141,7 +141,7 @@ class Person{
   * npmignore, index entry file, update package
   * Small refactor
   * @timeout, @debounce decorators
-  
+
 ![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
 ## Examples
@@ -332,4 +332,3 @@ p.doSomething(21,2); // returns 23
 p.doSomething(14,42); // keeps returning 23
 console.log( p.doSomething.timesCalled ); // 3
   ```
-

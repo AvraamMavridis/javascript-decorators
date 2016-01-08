@@ -29,14 +29,6 @@ export const _readonly = function () {
   };
 };
 
-export const _configurable = function () {
-  return function ( key, target, descriptor )
-  {
-    descriptor.configurable = true;
-    return descriptor;
-  };
-};
-
 export const _nonconfigurable = function () {
   return function ( key, target, descriptor )
   {
