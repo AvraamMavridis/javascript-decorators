@@ -367,7 +367,18 @@ console.log( p.doSomething.timesCalled ); // 3
 
 ## Changelog
 
-2016-01-06
+2016-01-07 Version 0.3.0
+==========
+
+  * Update README.md
+  * Update package.json
+  * Eslintignore file
+  * Accepts a parameter in validation decorators indicating if they will fail silently
+  * @readonly, @configurable, @nonconfigurable, @enumerable, @nonenumerable decorators
+  * Small refactor on export
+
+
+2016-01-06 Version 0.2.2
 ==========
 
   * @timesCalled decorator
