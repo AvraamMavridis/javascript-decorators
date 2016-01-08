@@ -71,6 +71,8 @@ class Person{
 
 [@timeout](#@timeout) (alias: @debounce)  : Executes the function after the specified wait (default 300ms)
 
+[@defer](#@defer)  : Executes the function when the current call stack has cleared
+
 ### Execution related decorators
 
 [@once()](#@once()) : Executes the function only once. Repeat calls return the value of the first call.
@@ -80,7 +82,7 @@ class Person{
 [@timesCalled()](#@timesCalled()) : Attaches a `timesCalled` property to the function that indicates how many times the function has been called.
 
 ###Method & Parameter decorators:
-[@readony()](#@readonly()), [@enumerable()](#@readonly()), [@nonenumerable()](#@readonly()), [@configurable()](#@readonly()), [@nonconfigurable()](#@readonly()), 
+[@readony()](#@readonly()), [@enumerable()](#@readonly()), [@nonenumerable()](#@readonly()), [@configurable()](#@readonly()), [@nonconfigurable()](#@readonly()),
 
 ![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
@@ -96,12 +98,12 @@ class Person{
   setPersonDetails( obj ) { ... }
 }
 
-  ``` 
-  
+  ```
+
 ### <a name="@acceptsObject"></a>@acceptsObject
 
 Executes the method only if the passed value is an object otherwise throws an exception, accepts position (default=0) or array of positions. Example:
-  
+
   ```js
 
 class Person{
@@ -109,12 +111,12 @@ class Person{
   doSomething( obj, str, obj ) { ... }
 }
 
-  ``` 
-  
+  ```
+
 ### <a name="@acceptsArray"></a>@acceptsArray
 
 Executes the method only if the passed value is an array otherwise throws an exception, accepts position (default=0) or array of positions. Example:
-  
+
   ```js
 
 class Person{
@@ -122,12 +124,12 @@ class Person{
   doSomething( arr ) { ... }
 }
 
-  ``` 
+  ```
 
 ### <a name="@acceptsString"></a>@acceptsString
 
 Executes the method only if the passed value is a string otherwise throws an exception, accepts position (default=0) or array of positions. Example:
-  
+
   ```js
 
 class Person{
@@ -135,12 +137,12 @@ class Person{
   doSomething( str ) { ... }
 }
 
-  ``` 
-  
+  ```
+
 ### <a name="@acceptsInteger"></a>@acceptsInteger
 
 Executes the method only if the passed value is an integer otherwise throws an exception, accepts position (default=0) or array of positions. Example:
-  
+
   ```js
 
 class Person{
@@ -149,11 +151,11 @@ class Person{
 }
 
   ```
-  
+
 ### <a name="@acceptsNumber"></a>@acceptsNumber
 
 Executes the method only if the passed value is a number otherwise throws an exception, accepts position (default=0) or array of positions. Example:
-  
+
   ```js
 
 class Person{
@@ -161,12 +163,12 @@ class Person{
   doSomething( number ) { ... }
 }
 
-  ``` 
-  
+  ```
+
 ### <a name="@acceptsBoolean"></a>@acceptsBoolean
 
 Executes the method only if the passed value is a boolean otherwise throws an exception, accepts position (default=0) or array of positions. Example:
-  
+
   ```js
 
 class Person{
@@ -174,12 +176,12 @@ class Person{
   doSomething( bol ) { ... }
 }
 
-  ``` 
-  
+  ```
+
 ### <a name="@acceptsFunction"></a>@acceptsFunction
 
 Executes the method only if the passed value is a function otherwise throws an exception, accepts position (default=0) or array of positions. Example:
-  
+
   ```js
 
 class Person{
@@ -187,12 +189,12 @@ class Person{
   doSomething( func ) { ... }
 }
 
-  ``` 
-  
+  ```
+
 ### <a name="@acceptsPromise"></a>@acceptsPromise
 
 Executes the method only if the passed value is a promise otherwise throws an exception, accepts position (default=0) or array of positions. Example:
-  
+
   ```js
 
 class Person{
@@ -200,17 +202,17 @@ class Person{
   doSomething( prom ) { ... }
 }
 
-  ``` 
-  
+  ```
+
 ### <a name="@immutable"></a>@immutable
 
-Makes a deepcopy of the passed arguments and executes the method with the copy to ensure that the initial parameters are not mutated. Example: 
-  
+Makes a deepcopy of the passed arguments and executes the method with the copy to ensure that the initial parameters are not mutated. Example:
+
   ```js
 
 class Person{
   @immutable();
-  doSomething( arg1 ) { 
+  doSomething( arg1 ) {
      arg1.test = 10;
   }
 }
@@ -219,17 +221,17 @@ var obj = { test: 5 };
 var p = new Person();
 p.dosomething( obj );
 console.log( obj.test ); // 5;
-  ``` 
+  ```
 
 ### <a name="@doesNotMutate"></a>@doesNotMutate
 
-Executes the method only if it doesnt mutate the passed arguments. Useful when the class extends another class and/or calls methods from the parent. Example: 
-  
+Executes the method only if it doesnt mutate the passed arguments. Useful when the class extends another class and/or calls methods from the parent. Example:
+
   ```js
 
 class Person{
   @doesNotMutate();
-  doSomething( arg1 ) { 
+  doSomething( arg1 ) {
      arg1.test = 10;
   }
 }
@@ -237,7 +239,7 @@ class Person{
 var obj = { test: 5 };
 var p = new Person();
 p.dosomething( obj ); // throws an exception because doSomething mutates the passed object.
-  ``` 
+  ```
 
 ### <a name="@memoization"></a>@memoization
 
@@ -245,7 +247,7 @@ p.dosomething( obj ); // throws an exception because doSomething mutates the pas
 
 class Person{
   @memoization();
-  doSomethingTimeConsuming( arg1 ) { 
+  doSomethingTimeConsuming( arg1 ) {
      arg1.test = 10;
   }
 }
@@ -254,8 +256,8 @@ var obj = { test: 5 };
 var p = new Person();
 p.doSomethingTimeConsuming( obj ); // calls the function
 p.doSomethingTimeConsuming( obj ); // immediately returns the result without calling the function
-  ``` 
-  
+  ```
+
 ### <a name="@log"></a>@log
 
   ```js
@@ -268,8 +270,8 @@ class Person{
 }
 
 var p = new Person();
-p.doSomething( 2 , 3 ); 
-  ``` 
+p.doSomething( 2 , 3 );
+  ```
 Will log in the console:
 
 ![Logged on console](http://oi64.tinypic.com/120ta1c.jpg "Logged on console")
@@ -287,8 +289,8 @@ class Person{
 }
 
 var p = new Person();
-p.doSomething( ); 
-  ``` 
+p.doSomething( );
+  ```
 Will log in the console something like:
 
 ![Logged on console](http://oi68.tinypic.com/n33tzo.jpg "Logged on console")
@@ -307,7 +309,7 @@ class Person{
 
 var p = new Person();
 p.doSomething(); // Executed after 2secs
-  ``` 
+  ```
 
 
 ### <a name="@once()"></a>@once()
@@ -325,8 +327,8 @@ var p = new Person();
 p.doSomething(1,2); // returns 3
 p.doSomething(21,2); // keeps returning 3
 p.doSomething(14,42); // keeps returning 3
-  ``` 
-  
+  ```
+
 ### <a name="@times(n)"></a>@times(n)
 
   ```js
@@ -343,8 +345,8 @@ p.doSomething(1,2); // returns 3
 p.doSomething(21,2); // returns 23
 p.doSomething(14,42); // keeps returning 23
 p.doSomething(14,542); // keeps returning 23
-  ``` 
-  
+  ```
+
 ### <a name="@timesCalled()"></a>@timesCalled()
 
   ```js
@@ -361,8 +363,8 @@ p.doSomething(1,2); // returns 3
 p.doSomething(21,2); // returns 23
 p.doSomething(14,42); // keeps returning 23
 console.log( p.doSomething.timesCalled ); // 3
-  ``` 
-  
+  ```
+
 ![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
 ## Changelog
