@@ -35,89 +35,123 @@ class Person{
 
 #### Validation related decorators
 
-[@validateSchema( schema )](#@validateSchema) :  Executes the function only if the schema is valid, 
+`@validateSchema( schema )` :  Executes the function only if the schema is valid, 
 
-`schema: object`
+*schema: object*
 
-[@acceptsObject( positions, failSilent )](#@acceptsObject)      :  Executes the function only if the passed arg is an object 
+`@acceptsObject( positions, failSilent )`      :  Executes the function only if the passed arg is an object 
 
-`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
+*positions: number|array (optional, default 0), failSilent: boolean(optional, default false)*
 
-[@acceptsArray( positions, failSilent )](#@acceptsArray) :  Executes the function only if the passed arg is an array
+`@acceptsArray( positions, failSilent )` :  Executes the function only if the passed arg is an array
 
-`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
 
-[@acceptsInteger( positions, failSilent )](#@acceptsInteger) :   Executes the function only if the passed arg is an integer
+`@acceptsInteger( positions, failSilent )`:   Executes the function only if the passed arg is an integer
 
-`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
 
-[@acceptsNumber( positions, failSilent )](#@acceptsNumber):  Executes the function only if the passed arg is a number
+`@acceptsNumber( positions, failSilent )`:  Executes the function only if the passed arg is a number
 
-`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
 
-[@acceptsBoolean( positions, failSilent )](#@acceptsBoolean):  Executes the function only if the passed arg is a boolean
+`@acceptsBoolean( positions, failSilent )`:  Executes the function only if the passed arg is a boolean
 
-`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
 
-[@acceptsFunction( positions, failSilent )](#@acceptsFunction):  Executes the function only if the passed arg is a function
 
-`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
+`@acceptsFunction( positions, failSilent )`:  Executes the function only if the passed arg is a function
 
-[@acceptsString( positions, failSilent )](#@acceptsString):  Executes the function only if the passed arg is a string
 
-`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
+`@acceptsString( positions, failSilent )`:  Executes the function only if the passed arg is a string
 
-[@acceptsPromise( positions, failSilent )](#@acceptsPromise):  Executes the function only if the passed arg is a promise
 
-`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
+`@acceptsPromise( positions, failSilent )`:  Executes the function only if the passed arg is a promise
+
 
 #### Immutability related decorators
 
-[@immutable()](#@immutable) :  Makes a deepcopy of the passed arguments and executes the method with the copy to ensure that the initial parameters are not mutated
+`@immutable()`:  Makes a deepcopy of the passed arguments and executes the method with the copy to ensure that the initial parameters are not mutated
 
-[@doesNotMutate()](#@doesNotMutate) :  Executes the method only if it doesnt mutate the passed arguments. Useful when the class extends another class and/or calls methods from the parent.
+`@doesNotMutate()` :  Executes the method only if it doesnt mutate the passed arguments. Useful when the class extends another class and/or calls methods from the parent.
 
 #### Performance related decorators
 
-[@memoization()](#@memoization) :  Use the [memoization](https://en.wikipedia.org/wiki/Memoization) technique to prevent expensive function calls.
+`@memoization()` :  Use the [memoization](https://en.wikipedia.org/wiki/Memoization) technique to prevent expensive function calls.
 
 #### Debugging & Developing decorators
 
-[@log()](#@log) : Logs the passed values and the returned result.
+`@log()`: Logs the passed values and the returned result.
 
-[@loglocalstorage()](#@loglocalstorage) : Logs the size of the localstorage before and after the function call.
+`@loglocalstorage()` : Logs the size of the localstorage before and after the function call.
 
-[@donotlog()](#@donotlog) : Do not log messages, errors and warnings.
+`@donotlog()` : Do not log messages, errors and warnings.
 
-[@donotlogmessages()](#@donotlogmessages) : Do not log messages.
+`@donotlogmessages()` : Do not log messages.
 
-[@donotlogwarnings()](#@donotlogwarnings) : Do not log warnings.
+`@donotlogwarnings()` : Do not log warnings.
 
-[@donotlogerrors()](#@donotlogerrors) : Do not log errors.
+`@donotlogerrors()` : Do not log errors.
 
 ### Time related decorators
 
-[@timeout( ms )](#@timeout) (alias: @debounce)  : Executes the function after the specified wait (default 300ms)
+`@timeout( ms )` (alias: `@debounce( ms )`)  : Executes the function after the specified wait (default 300ms)
 
-`ms: number`
+*ms: number*
 
-[@defer()](#@defer)  : Executes the function when the current call stack has cleared
+`@defer()`  : Executes the function when the current call stack has cleared
 
 ### Execution related decorators
 
-[@once()](#@once()) : Executes the function only once. Repeat calls return the value of the first call.
+`@once()` : Executes the function only once. Repeat calls return the value of the first call.
 
-[@times(n)](#@times(n)) : Executes the function at most `n` times. Repeat calls return the value of the **nth** call.
+`@times(n)` : Executes the function at most `n` times. Repeat calls return the value of the **nth** call.
 
-`n: number`
+*n: number*
 
-[@timesCalled()](#@timesCalled()) : Attaches a `timesCalled` property to the function that indicates how many times the function has been called.
+`@timesCalled()` : Attaches a `timesCalled` property to the function that indicates how many times the function has been called.
 
 ###Method & Parameter decorators:
-[@readony()](#@readonly()), [@enumerable()](#@readonly()), [@nonenumerable()](#@readonly()), [@configurable()](#@readonly()), [@nonconfigurable()](#@readonly()),
+`@readony()`,  `@enumerable()`, `@nonenumerable()`, `@configurable()`, `@nonconfigurable()`
 
 ![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
+## <a name="Changelog"></a>Changelog 
+
+2016-01-08 Version 0.3.1
+==========
+
+  * Fix typo on package.json
+  * Update Readme
+  * Helper to validate that isFunction for method decorators
+  * Fix export alias for @debounce
+  * @defer decorator
+
+
+2016-01-07 Version 0.3.0
+==========
+
+  * Update README
+  * Update package.json
+  * Eslintignore file
+  * Accepts a parameter in validation decorators indicating if they will fail silently
+  * @readonly, @configurable, @nonconfigurable, @enumerable, @nonenumerable decorators
+  * Small refactor on export
+
+
+2016-01-06 Version 0.2.2
+==========
+
+  * @timesCalled decorator
+  * @once and @times decorators
+  * Fix color on console.log of @loglocalstorage
+  * Always return the descriptor to be able to chain decorators
+  * Fix package.json
+  * Update package.json
+  * Update README
+  * npmignore, index entry file, update package
+  * Small refactor
+  * @timeout, @debounce decorators
+  
+![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
+
+## Examples
 
 ### <a name="@validateSchema"></a>@validateSchema
 
@@ -139,99 +173,8 @@ Executes the method only if the passed value is an object otherwise throws an ex
   ```js
 
 class Person{
-  @acceptsObject( [0,2] );
+  @acceptsObject( [0,2], true );
   doSomething( obj, str, obj ) { ... }
-}
-
-  ```
-
-### <a name="@acceptsArray"></a>@acceptsArray
-
-Executes the method only if the passed value is an array otherwise throws an exception, accepts position (default=0) or array of positions. Example:
-
-  ```js
-
-class Person{
-  @acceptsArray();
-  doSomething( arr ) { ... }
-}
-
-  ```
-
-### <a name="@acceptsString"></a>@acceptsString
-
-Executes the method only if the passed value is a string otherwise throws an exception, accepts position (default=0) or array of positions. Example:
-
-  ```js
-
-class Person{
-  @acceptsString();
-  doSomething( str ) { ... }
-}
-
-  ```
-
-### <a name="@acceptsInteger"></a>@acceptsInteger
-
-Executes the method only if the passed value is an integer otherwise throws an exception, accepts position (default=0) or array of positions. Example:
-
-  ```js
-
-class Person{
-  @acceptsInteger();
-  doSomething( int ) { ... }
-}
-
-  ```
-
-### <a name="@acceptsNumber"></a>@acceptsNumber
-
-Executes the method only if the passed value is a number otherwise throws an exception, accepts position (default=0) or array of positions. Example:
-
-  ```js
-
-class Person{
-  @acceptsNumber();
-  doSomething( number ) { ... }
-}
-
-  ```
-
-### <a name="@acceptsBoolean"></a>@acceptsBoolean
-
-Executes the method only if the passed value is a boolean otherwise throws an exception, accepts position (default=0) or array of positions. Example:
-
-  ```js
-
-class Person{
-  @acceptsBoolean();
-  doSomething( bol ) { ... }
-}
-
-  ```
-
-### <a name="@acceptsFunction"></a>@acceptsFunction
-
-Executes the method only if the passed value is a function otherwise throws an exception, accepts position (default=0) or array of positions. Example:
-
-  ```js
-
-class Person{
-  @acceptsFunction();
-  doSomething( func ) { ... }
-}
-
-  ```
-
-### <a name="@acceptsPromise"></a>@acceptsPromise
-
-Executes the method only if the passed value is a promise otherwise throws an exception, accepts position (default=0) or array of positions. Example:
-
-  ```js
-
-class Person{
-  @acceptsPromise();
-  doSomething( prom ) { ... }
 }
 
   ```
@@ -397,41 +340,3 @@ p.doSomething(14,42); // keeps returning 23
 console.log( p.doSomething.timesCalled ); // 3
   ```
 
-![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
-
-## <a name="Changelog"></a>Changelog 
-
-2016-01-08 Version 0.3.1
-==========
-
-  * Fix typo on package.json
-  * Update Readme
-  * Helper to validate that isFunction for method decorators
-  * Fix export alias for @debounce
-  * @defer decorator
-
-
-2016-01-07 Version 0.3.0
-==========
-
-  * Update README
-  * Update package.json
-  * Eslintignore file
-  * Accepts a parameter in validation decorators indicating if they will fail silently
-  * @readonly, @configurable, @nonconfigurable, @enumerable, @nonenumerable decorators
-  * Small refactor on export
-
-
-2016-01-06 Version 0.2.2
-==========
-
-  * @timesCalled decorator
-  * @once and @times decorators
-  * Fix color on console.log of @loglocalstorage
-  * Always return the descriptor to be able to chain decorators
-  * Fix package.json
-  * Update package.json
-  * Update README
-  * npmignore, index entry file, update package
-  * Small refactor
-  * @timeout, @debounce decorators
