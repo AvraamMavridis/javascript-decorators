@@ -35,51 +35,81 @@ class Person{
 
 #### Validation related decorators
 
-[@validateSchema](#@validateSchema) :  Executes the function only if the schema is valid
+[@validateSchema( schema )](#@validateSchema) :  Executes the function only if the schema is valid, 
 
-[@acceptsObject](#@acceptsObject)      :  Executes the function only if the passed arg is an object
+`schema: object`
 
-[@acceptsArray](#@acceptsArray) :  Executes the function only if the passed arg is an array
+[@acceptsObject( positions, failSilent )](#@acceptsObject)      :  Executes the function only if the passed arg is an object 
 
-[@acceptsInteger](#@acceptsInteger) :   Executes the function only if the passed arg is an integer
+`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
 
-[@acceptsNumber](#@acceptsNumber):  Executes the function only if the passed arg is a number
+[@acceptsArray( positions, failSilent )](#@acceptsArray) :  Executes the function only if the passed arg is an array
 
-[@acceptsBoolean](#@acceptsBoolean):  Executes the function only if the passed arg is a boolean
+`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
 
-[@acceptsFunction](#@acceptsFunction):  Executes the function only if the passed arg is a function
+[@acceptsInteger( positions, failSilent )](#@acceptsInteger) :   Executes the function only if the passed arg is an integer
 
-[@acceptsString](#@acceptsString):  Executes the function only if the passed arg is a string
+`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
 
-[@acceptsPromise](#@acceptsPromise):  Executes the function only if the passed arg is a promise
+[@acceptsNumber( positions, failSilent )](#@acceptsNumber):  Executes the function only if the passed arg is a number
+
+`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
+
+[@acceptsBoolean( positions, failSilent )](#@acceptsBoolean):  Executes the function only if the passed arg is a boolean
+
+`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
+
+[@acceptsFunction( positions, failSilent )](#@acceptsFunction):  Executes the function only if the passed arg is a function
+
+`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
+
+[@acceptsString( positions, failSilent )](#@acceptsString):  Executes the function only if the passed arg is a string
+
+`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
+
+[@acceptsPromise( positions, failSilent )](#@acceptsPromise):  Executes the function only if the passed arg is a promise
+
+`positions: number|array (optional, default 0), failSilent: boolean(optional, default false)`
 
 #### Immutability related decorators
 
-[@immutable](#@immutable) :  Makes a deepcopy of the passed arguments and executes the method with the copy to ensure that the initial parameters are not mutated
+[@immutable()](#@immutable) :  Makes a deepcopy of the passed arguments and executes the method with the copy to ensure that the initial parameters are not mutated
 
-[@doesNotMutate](#@doesNotMutate) :  Executes the method only if it doesnt mutate the passed arguments. Useful when the class extends another class and/or calls methods from the parent.
+[@doesNotMutate()](#@doesNotMutate) :  Executes the method only if it doesnt mutate the passed arguments. Useful when the class extends another class and/or calls methods from the parent.
 
 #### Performance related decorators
 
-[@memoization](#@memoization) :  Use the [memoization](https://en.wikipedia.org/wiki/Memoization) technique to prevent expensive function calls.
+[@memoization()](#@memoization) :  Use the [memoization](https://en.wikipedia.org/wiki/Memoization) technique to prevent expensive function calls.
 
 #### Debugging & Developing decorators
 
-[@log](#@log) : Logs the passed values and the returned result.
+[@log()](#@log) : Logs the passed values and the returned result.
 
-[@loglocalstorage](#@loglocalstorage) : Logs the size of the localstorage before and after the function call.
+[@loglocalstorage()](#@loglocalstorage) : Logs the size of the localstorage before and after the function call.
+
+[@donotlog()](#@donotlog) : Do not log messages, errors and warnings.
+
+[@donotlogmessages()](#@donotlogmessages) : Do not log messages.
+
+[@donotlogwarnings()](#@donotlogwarnings) : Do not log warnings.
+
+[@donotlogerrors()](#@donotlogerrors) : Do not log errors.
 
 ### Time related decorators
 
-[@timeout](#@timeout) (alias: @debounce)  : Executes the function after the specified wait (default 300ms)
+[@timeout( ms )](#@timeout) (alias: @debounce)  : Executes the function after the specified wait (default 300ms)
 
-[@defer](#@defer)  : Executes the function when the current call stack has cleared
+`ms: number`
+
+[@defer()](#@defer)  : Executes the function when the current call stack has cleared
 
 ### Execution related decorators
 
 [@once()](#@once()) : Executes the function only once. Repeat calls return the value of the first call.
 
 [@times(n)](#@times(n)) : Executes the function at most `n` times. Repeat calls return the value of the **nth** call.
+
+`n: number`
 
 [@timesCalled()](#@timesCalled()) : Attaches a `timesCalled` property to the function that indicates how many times the function has been called.
 
