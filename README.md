@@ -35,80 +35,65 @@ class Person{
 
 #### Validation related decorators
 
-`@validateSchema( schema )` :  Executes the function only if the schema is valid, 
-
++ `@validateSchema( schema )` :  Executes the function only if the schema is valid, 
 *schema: object*
 
-`@acceptsObject( positions, failSilent )`      :  Executes the function only if the passed arg is an object 
-
++ `@acceptsObject( positions, failSilent )`      :  Executes the function only if the passed arg is an object 
 *positions: number|array (optional, default 0), failSilent: boolean(optional, default false)*
 
-`@acceptsArray( positions, failSilent )` :  Executes the function only if the passed arg is an array
++ `@acceptsArray( positions, failSilent )` :  Executes the function only if the passed arg is an array
 
++ `@acceptsInteger( positions, failSilent )`:   Executes the function only if the passed arg is an integer
 
-`@acceptsInteger( positions, failSilent )`:   Executes the function only if the passed arg is an integer
++ `@acceptsNumber( positions, failSilent )`:  Executes the function only if the passed arg is a number
 
++ `@acceptsBoolean( positions, failSilent )`:  Executes the function only if the passed arg is a boolean
 
-`@acceptsNumber( positions, failSilent )`:  Executes the function only if the passed arg is a number
++ `@acceptsFunction( positions, failSilent )`:  Executes the function only if the passed arg is a function
 
++ `@acceptsString( positions, failSilent )`:  Executes the function only if the passed arg is a string
 
-`@acceptsBoolean( positions, failSilent )`:  Executes the function only if the passed arg is a boolean
++ `@acceptsPromise( positions, failSilent )`:  Executes the function only if the passed arg is a promise
 
++ `@immutable()`:  Makes a deepcopy of the passed arguments and executes the method with the copy to ensure that the initial parameters are not mutated
 
++ `@doesNotMutate()` :  Executes the method only if it doesnt mutate the passed arguments. Useful when the class extends another class and/or calls methods from the parent.
 
-`@acceptsFunction( positions, failSilent )`:  Executes the function only if the passed arg is a function
++ `@memoization()` :  Use the [memoization](https://en.wikipedia.org/wiki/Memoization) technique to prevent expensive function calls.
 
++ `@log()`: Logs the passed values and the returned result.
 
-`@acceptsString( positions, failSilent )`:  Executes the function only if the passed arg is a string
++ `@loglocalstorage()` : Logs the size of the localstorage before and after the function call.
 
++ `@donotlog()` : Do not log messages, errors and warnings.
 
-`@acceptsPromise( positions, failSilent )`:  Executes the function only if the passed arg is a promise
++ `@donotlogmessages()` : Do not log messages.
 
++ `@donotlogwarnings()` : Do not log warnings.
 
-#### Immutability related decorators
++ `@donotlogerrors()` : Do not log errors.
 
-`@immutable()`:  Makes a deepcopy of the passed arguments and executes the method with the copy to ensure that the initial parameters are not mutated
-
-`@doesNotMutate()` :  Executes the method only if it doesnt mutate the passed arguments. Useful when the class extends another class and/or calls methods from the parent.
-
-#### Performance related decorators
-
-`@memoization()` :  Use the [memoization](https://en.wikipedia.org/wiki/Memoization) technique to prevent expensive function calls.
-
-#### Debugging & Developing decorators
-
-`@log()`: Logs the passed values and the returned result.
-
-`@loglocalstorage()` : Logs the size of the localstorage before and after the function call.
-
-`@donotlog()` : Do not log messages, errors and warnings.
-
-`@donotlogmessages()` : Do not log messages.
-
-`@donotlogwarnings()` : Do not log warnings.
-
-`@donotlogerrors()` : Do not log errors.
-
-### Time related decorators
-
-`@timeout( ms )` (alias: `@debounce( ms )`)  : Executes the function after the specified wait (default 300ms)
-
++ `@timeout( ms )` (alias: `@debounce( ms )`)  : Executes the function after the specified wait (default 300ms)
 *ms: number*
 
-`@defer()`  : Executes the function when the current call stack has cleared
++ `@defer()`  : Executes the function when the current call stack has cleared
 
-### Execution related decorators
++ `@once()` : Executes the function only once. Repeat calls return the value of the first call.
 
-`@once()` : Executes the function only once. Repeat calls return the value of the first call.
-
-`@times(n)` : Executes the function at most `n` times. Repeat calls return the value of the **nth** call.
-
++ `@times(n)` : Executes the function at most `n` times. Repeat calls return the value of the **nth** call.
 *n: number*
 
-`@timesCalled()` : Attaches a `timesCalled` property to the function that indicates how many times the function has been called.
++ `@timesCalled()` : Attaches a `timesCalled` property to the function that indicates how many times the function has been called.
 
-###Method & Parameter decorators:
-`@readony()`,  `@enumerable()`, `@nonenumerable()`, `@configurable()`, `@nonconfigurable()`
++ `@readony()`
+
++ `@enumerable()`
+
++ `@nonenumerable()`
+
++ `@configurable()`
+
++ `@nonconfigurable()`
 
 ![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
