@@ -21,7 +21,7 @@ export const _overridden = function () {
     descriptor.value = function ( ...args ) {
       const thisPrototype = Object.getPrototypeOf( this );
       if( target !== thisPrototype) {
-        throw Error( `${thisPrototype.constructor.name} should override method ${key} of the base class ${target.constructor.name}` );
+        throw Error( `${thisPrototype.constructor.name} should overridde method ${key} of the base class ${target.constructor.name}` );
       }
       return func.call( this, args );
     };
@@ -41,7 +41,7 @@ export const _forceoverridden = function () {
   {
     descriptorIsFunc( key, descriptor.value );
     descriptor.value = function ( ...args ) {
-      throw Error( `method ${key} of the base class ${target.constructor.name} should be overriden` );
+      throw Error( `method ${key} of the base class ${target.constructor.name} should be overridden` );
     };
     return descriptor;
   };
