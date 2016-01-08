@@ -4,7 +4,9 @@
 
 [![Build Status](https://travis-ci.org/AvraamMavridis/javascript-decorators.svg?branch=master)](https://travis-ci.org/AvraamMavridis/javascript-decorators)
 
-Common helpers using es7 decorators
+Common helpers using es7 decorators. 
+
+You can see the [Changelog](#Changelog) for the version specific changes.
 
 ![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
@@ -367,12 +369,22 @@ console.log( p.doSomething.timesCalled ); // 3
 
 ![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
-## Changelog
+## <a name="Changelog"></a>Changelog 
+
+2016-01-08 Version 0.3.1
+==========
+
+  * Fix typo on package.json
+  * Update Readme
+  * Helper to validate that isFunction for method decorators
+  * Fix export alias for @debounce
+  * @defer decorator
+
 
 2016-01-07 Version 0.3.0
 ==========
 
-  * Update README.md
+  * Update README
   * Update package.json
   * Eslintignore file
   * Accepts a parameter in validation decorators indicating if they will fail silently
@@ -389,7 +401,7 @@ console.log( p.doSomething.timesCalled ); // 3
   * Always return the descriptor to be able to chain decorators
   * Fix package.json
   * Update package.json
-  * Update README.md
+  * Update README
   * npmignore, index entry file, update package
   * Small refactor
   * @timeout, @debounce decorators
