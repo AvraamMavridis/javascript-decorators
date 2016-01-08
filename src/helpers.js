@@ -15,3 +15,5 @@ export const descriptorIsFunc = function ( target, func )
   }
   return true;
 };
+
+export const noop = function () {};
