@@ -25,7 +25,11 @@ export { _debounce         as debounce,
          _defer            as defer } from './@timers';
 
 export { _loglocalstorage  as loglocalstorage,
-         _log              as log } from './@loggers';
+         _log              as log,
+         _donotlog         as donotlog,
+         _donotlogmessages as donotlogmessages,
+         _donotlogerrors   as donotlogerrors,
+         _donotlogwarnings as donotlogwarnings } from './@loggers';
 
 export { _once             as once,
          _times            as times,

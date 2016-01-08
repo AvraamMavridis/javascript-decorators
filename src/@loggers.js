@@ -4,7 +4,8 @@
 * @author  Avraam Mavridis      <avr.mav@gmail.com>
 *
 */
-import { descriptorIsFunc } from './helpers';
+import { descriptorIsFunc, noop } from './helpers';
+
 /**
  * Logs the passed arguments and the returned value
  *
@@ -97,3 +98,44 @@ export const _loglocalstorage = function () {
     return descriptor;
   };
 };
+
+/**
+ * donotlog decorator, prevents log statements on the console
+ *
+ * @method _donotlog
+ *
+ * @return {[type]}  [description]
+ */
+export const _donotbase = function ( type ) {
+  const nativeFuncs = {};
+  const types = [].concat( type );
+
+  return function ( key, target, descriptor )
+  {
+    const func = descriptor.value;
+    descriptorIsFunc( key, func );
+    descriptor.value = function ( ...args )
+    {
+      // nooping native console
+      types.forEach( function ( _type ) {
+        nativeFuncs[ _type ] = console[ _type ];
+        console[ _type ] = noop;
+      } );
+
+      const res = func.apply( this, args );
+
+      // restore native
+      types.forEach( function ( _type ) {
+        console[ _type ] = nativeFuncs[ _type ];
+      } );
+
+      return res;
+    };
+    return descriptor;
+  };
+};
+
+export const _donotlogmessages = _donotbase.bind( {}, 'log' );
+export const _donotlogwarnings = _donotbase.bind( {}, 'warn' );
+export const _donotlogerrors = _donotbase.bind( {}, 'error' );
+export const _donotlog = _donotbase.bind( {}, ['error', 'log', 'warn', 'table'] );
