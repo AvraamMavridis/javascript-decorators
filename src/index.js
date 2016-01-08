@@ -20,7 +20,9 @@ export { _acceptsArray     as acceptsArray,
 
 export { _memoization      as memoization } from './@memoizator';
 
-export { _debounce         as debounce    } from './@timers';
+export { _debounce         as debounce,
+         _timeout          as timeout,
+         _defer            as defer } from './@timers';
 
 export { _loglocalstorage  as loglocalstorage,
          _log              as log } from './@loggers';
