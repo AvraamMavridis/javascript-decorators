@@ -4,7 +4,7 @@
 * @author  Avraam Mavridis      <avr.mav@gmail.com>
 *
 */
-
+import { descriptorIsFunc } from './helpers';
 /**
  * Timeout decorator
  *
@@ -19,6 +19,7 @@ const __timeout = function ( wait = 300 ) {
   return function ( key, target, descriptor )
   {
     const func = descriptor.value;
+    descriptorIsFunc( key, func );
     const dkey = Symbol();
     descriptor.value = function ( ...args )
     {
@@ -33,3 +34,4 @@ const __timeout = function ( wait = 300 ) {
 
 export const _timeout = __timeout;
 export const _debounce = __timeout;
+export const _defer = __timeout.bind( this, 0 );
