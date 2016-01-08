@@ -1,6 +1,6 @@
 {
   "name": "javascript-decorators",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "homepage": "https://github.com/AvraamMavridis/javascript-decorators",
   "repository": {
     "type": "git",
@@ -27,7 +27,8 @@
     "decorate",
     "aspects",
     "aop",
-    "aspect-orianted-programing",
+    "aspect-orianted-programming",
+    "aspect orianted programming",
     "es6",
     "es7",
     "es2015",
