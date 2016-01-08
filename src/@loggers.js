@@ -13,10 +13,10 @@ import { descriptorIsFunc, noop } from './helpers';
  *
  */
 export const _log = function () {
-  return function ( key, target, descriptor )
+  return function ( target, key, descriptor )
   {
     const func = descriptor.value;
-    descriptorIsFunc( key, func );
+    descriptorIsFunc( target, func );
     descriptor.value = function ( ...args )
     {
       const res = func.apply( this, args );
@@ -82,10 +82,10 @@ const _getLocalStorageSize = function ()
  */
 export const _loglocalstorage = function () {
 
-  return function ( key, target, descriptor )
+  return function ( target, key, descriptor )
   {
     const func = descriptor.value;
-    descriptorIsFunc( key, func );
+    descriptorIsFunc( target, func );
     descriptor.value = function ( ...args )
     {
       const sizeBefore = _getLocalStorageSize();
