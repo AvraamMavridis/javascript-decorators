@@ -4,7 +4,7 @@
 * @author  Avraam Mavridis      <avr.mav@gmail.com>
 *
 */
-
+import { descriptorIsFunc } from './helpers';
 /**
  * Logs the passed arguments and the returned value
  *
@@ -15,6 +15,7 @@ export const _log = function () {
   return function ( key, target, descriptor )
   {
     const func = descriptor.value;
+    descriptorIsFunc( key, func );
     descriptor.value = function ( ...args )
     {
       const res = func.apply( this, args );
@@ -83,6 +84,7 @@ export const _loglocalstorage = function () {
   return function ( key, target, descriptor )
   {
     const func = descriptor.value;
+    descriptorIsFunc( key, func );
     descriptor.value = function ( ...args )
     {
       const sizeBefore = _getLocalStorageSize();

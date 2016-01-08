@@ -4,6 +4,7 @@
 * @author  Avraam Mavridis      <avr.mav@gmail.com>
 *
 */
+import { descriptorIsFunc } from './helpers';
 
 /**
  * Tests if the prop is an Object
@@ -226,6 +227,7 @@ export const _basefunc = function ( position = 0, validationFunc, errorMsg, fail
   return function ( key, target, descriptor )
   {
     const func = descriptor.value;
+    descriptorIsFunc( key, func );
     descriptor.value = function ( ...args )
     {
       const props = _getPropsToValidate( position, args );

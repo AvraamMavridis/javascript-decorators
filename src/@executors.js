@@ -5,10 +5,13 @@
 *
 */
 
+import { descriptorIsFunc } from './helpers';
+
 /**
- * Base decorator function for immutability
+ * Executes a function n times, any repeat call returns
+ * the value of the nth call
  *
- * @method _basefunc
+ * @method __times
  *
  *
  * @return { function }  decorator function
@@ -18,6 +21,7 @@ const __times = function ( times = 1 ) {
   let res;
   return function ( target, key, descriptor ) {
     const func = descriptor.value;
+    descriptorIsFunc( key, func );
     descriptor.value = function ( ...args )
     {
       if ( timescalled !== times ) {
@@ -31,9 +35,19 @@ const __times = function ( times = 1 ) {
   };
 };
 
+/**
+ * Attaches a property on the function indicating how many times
+ * has been called
+ *
+ * @method __times
+ *
+ *
+ * @return { function }  decorator function
+ */
 const __timesCalled = function () {
   return function ( target, key, descriptor ) {
     const func = descriptor.value;
+    descriptorIsFunc( key, func );
     descriptor.value = function ( ...args )
     {
       descriptor.value.timesCalled = descriptor.value.timesCalled || 0;

@@ -7,6 +7,7 @@
 
 import deepcopy from 'deepcopy';
 import deepEqual from 'deep-equal';
+import { descriptorIsFunc } from './helpers';
 
 /**
  * Base decorator function for immutability
@@ -20,6 +21,7 @@ export const _immutable = function () {
   return function ( key, target, descriptor )
   {
     const func = descriptor.value;
+    descriptorIsFunc( key, func );
     descriptor.value = function ( ...args )
     {
       const newArgs = args.reduce( function ( previousval, currentval ) {
@@ -36,6 +38,7 @@ export const _doesNotMutate = function () {
   return function ( key, target, descriptor )
   {
     const func = descriptor.value;
+    descriptorIsFunc( key, func );
     descriptor.value = function ( ...args )
     {
       const tempArgs = deepcopy( args );

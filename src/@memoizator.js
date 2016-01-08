@@ -4,6 +4,7 @@
 * @author  Avraam Mavridis      <avr.mav@gmail.com>
 *
 */
+import { descriptorIsFunc } from './helpers';
 
 export const _memoization = function () {
   const cache = new Map();
@@ -11,6 +12,7 @@ export const _memoization = function () {
   return function ( key, target, descriptor )
   {
     const func = descriptor.value;
+    descriptorIsFunc( key, func );
     descriptor.value = function ( ...args )
     {
       const ckey = args.join( '' );
