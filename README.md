@@ -103,6 +103,16 @@ class Person{
 
 ## <a name="Changelog"></a>Changelog
 
+2016-01-08 Version 0.4.0
+==========
+
+  * Update readme
+  * Remove @configurable decorator, it doesnt make much sense
+  * Fix typo
+  * @overriden, @forceoverriden decorators
+  * Update eslint rules
+
+
 2016-01-08 Version 0.3.2
 ==========
 
