@@ -8,11 +8,13 @@ Common helpers using es7 decorators.
 
 You can see the [Changelog](#Changelog) for the version specific changes.
 
+This project adheres to [Semantic Versioning](http://semver.org/).
+
 ![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
 ## How to use
 
-[![NPM](https://nodei.co/npm/javascript-decorators.png?compact=true)](https://nodei.co/npm/javascript-decorators/)
+[![NPM](https://nodei.co/npm/javascript-decorators.png?mini=true)](https://nodei.co/npm/javascript-decorators/)
 
 `npm i --save javascript-decorators`
 
@@ -107,7 +109,7 @@ class Person{
 ==========
 
   * Update readme
-  * Remove @configurable decorator, it doesnt make much sense
+  * Remove @configurable decorator, it doesnt make much sense (**breaking change**)
   * Fix typo
   * @overriden, @forceoverriden decorators
   * Update eslint rules
@@ -157,6 +159,14 @@ class Person{
   * @timeout, @debounce decorators
 
 ![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
+
+## Contributing
+Feel free to open issues, make suggestions or send PRs. 
+This project adheres to the Contributor Covenant [code of conduct](http://contributor-covenant.org/). By participating, you are expected to uphold this code. 
+
+Contact:
+
+Twitter: [@avraamakis](https://twitter.com/avraamakis)
 
 ## Examples
 
