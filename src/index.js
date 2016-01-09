@@ -41,4 +41,6 @@ export { _readonly         as readonly,
          _nonconfigurable  as nonconfigurable } from './@stators';
 
 export { _overridden       as overridden,
-         _forceoverridden   as forceoverridden } from './@inheritedfunctions';
+         _forceoverridden  as forceoverridden } from './@inheritedfunctions';
+
+export { _trycatch as trycatch } from './@trycatch';
