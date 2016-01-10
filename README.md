@@ -46,6 +46,8 @@ class Person{
 
 + **@timesCalled()** : Attaches a `timesCalled` property to the function that indicates how many times the function has been called.
 
++ **@trycatch( errorHandler )** : Wraps the function around a try/catch, requires a passed errorHandler function
+
 + **@validateSchema( schema )** :  Executes the function only if the schema is valid,
 *schema: object*
 
@@ -105,6 +107,11 @@ class Person{
 
 ## <a name="Changelog"></a>Changelog
 
+2016-01-09 Version 0.4.1
+==========
+
+  * @trycatch decorator
+
 2016-01-08 Version 0.4.0
 ==========
 
@@ -161,8 +168,8 @@ class Person{
 ![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
 ## Contributing
-Feel free to open issues, make suggestions or send PRs. 
-This project adheres to the Contributor Covenant [code of conduct](http://contributor-covenant.org/). By participating, you are expected to uphold this code. 
+Feel free to open issues, make suggestions or send PRs.
+This project adheres to the Contributor Covenant [code of conduct](http://contributor-covenant.org/). By participating, you are expected to uphold this code.
 
 Contact:
 
