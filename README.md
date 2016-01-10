@@ -21,17 +21,32 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 And then to use a decorator just import it:
 
 ```js
-import { log } from 'javascript-decorators'
+import { multiInherit } from 'javascript-decorators'
 
+class Manager{
+  render(){ return 42; }
+  init(){ return 43; }
+  t(){ return 44; }
+};
+class Employee{
+  render(){ return 45; }
+  mount(){ return 46; }
+  t(){ return 47;}
+};
+
+@multiInherit( Manager, Employee )
 class Person{
-  @log()
-  doSomething(){
-    ...
-  }
-}
+  t(){ return 3; }
+};
 ```
 
 ## Decorators
+
+###Class decorators:
+
++ **@multiInherit( array of classes )** (alias: `@multiExtend()`)  :  * Inherit all the methods of the passed classes. If two classes have method with the same name the last one is inheritted.
+
++ **@partialyInherit( class or array of classes, methodName or array of methodNames )** (alias: `@partialyExtend()`)  :  Inherit only the specified methods.
 
 ###Method decorators:
 
