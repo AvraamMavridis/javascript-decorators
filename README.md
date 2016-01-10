@@ -122,6 +122,14 @@ class Person{
 
 ## <a name="Changelog"></a>Changelog
 
+2016-01-10 Version 0.5.0
+==========
+
+  * Started class decorators
+  * @partialyInherit class decorator
+  * @multiInherit class decorator
+
+
 2016-01-09 Version 0.4.1
 ==========
 
