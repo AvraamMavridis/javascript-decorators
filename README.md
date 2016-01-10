@@ -39,7 +39,7 @@ class Person{
   t(){ return 3; }
 };
 
-cont p = new Person();
+const p = new Person();
 p.render(); // 45
 p.t(); // 3
 p.init(); // 43
