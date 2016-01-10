@@ -44,3 +44,6 @@ export { _overridden       as overridden,
          _forceoverridden  as forceoverridden } from './@inheritedfunctions';
 
 export { _trycatch as trycatch } from './@trycatch';
+
+export { _multiInherit as multiInherit,
+         _multiInherit as multiExtend } from './@multiinheritance';
