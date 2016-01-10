@@ -44,7 +44,7 @@ class Person{
 
 ###Class decorators:
 
-+ **@multiInherit( array of classes )** (alias: `@multiExtend()`)  :  * Inherit all the methods of the passed classes. If two classes have method with the same name the last one is inheritted.
++ **@multiInherit( array of classes )** (alias: `@multiExtend()`)  :  Inherit all the methods of the passed classes. If two classes have method with the same name the last one is inheritted.
 
 + **@partialyInherit( class or array of classes, methodName or array of methodNames )** (alias: `@partialyExtend()`)  :  Inherit only the specified methods.
 
