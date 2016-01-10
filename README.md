@@ -386,8 +386,8 @@ class Person{
 }
 
 var p = new Person();
-p.doSomething(1,2); // returns 3
-p.doSomething(21,2); // returns 23
-p.doSomething(14,42); // keeps returning 23
+p.doSomething(1,2); 
+p.doSomething(21,2); 
+p.doSomething(14,42); 
 console.log( p.doSomething.timesCalled ); // 3
   ```
