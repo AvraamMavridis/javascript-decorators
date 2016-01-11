@@ -48,4 +48,6 @@ export { _trycatch as trycatch } from './@trycatch';
 export { _multiInherit as multiInherit,
          _multiInherit as multiExtend,
          _partialyInherit as partialyInherit,
-         _partialyInherit as partialyExtend } from './@multiinheritance';
+         _partialyInherit as partialyExtend,
+         _partialyInherit as partiallyInherit,
+         _partialyInherit as partiallyExtend } from './@multiinheritance';
