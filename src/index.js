@@ -51,3 +51,6 @@ export { _multiInherit as multiInherit,
          _partialyInherit as partialyExtend,
          _partialyInherit as partiallyInherit,
          _partialyInherit as partiallyExtend } from './@multiinheritance';
+
+export { _passedValuesEqualToNumberOfArguments as passedValuesEqualToNumberOfArguments,
+         _passedValuesEqualToNumberOfArguments as valuesEqualToNumberOfArguments } from './@passedValuesEqualToNumberOfArguments';
