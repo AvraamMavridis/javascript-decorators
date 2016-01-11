@@ -26,7 +26,7 @@ import {
  * @return { function }  Decorator
  */
 export const _acceptsObject = function ( position = 0, failSilent = false ) {
-  return _basefunc( position, _isObject, ' is not an object' );
+  return _basefunc( position, _isObject, ' is not an object', failSilent );
 };
 
 /**
