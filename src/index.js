@@ -54,3 +54,5 @@ export { _multiInherit as multiInherit,
 
 export { _passedValuesEqualToNumberOfArguments as passedValuesEqualToNumberOfArguments,
          _passedValuesEqualToNumberOfArguments as valuesEqualToNumberOfArguments } from './@passedValuesEqualToNumberOfArguments';
+
+export { _after as after } from './@after';

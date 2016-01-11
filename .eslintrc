@@ -12,6 +12,7 @@
             2,
             "always"
         ],
+        "consistent-return": 0,
         "no-else-return": 0,
         "no-console": 0,
         "max-len": [1, 160],
