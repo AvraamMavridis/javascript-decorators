@@ -16,7 +16,6 @@ import { descriptorIsFunc } from './helpers';
  * @return { function }  decorator function
  */
 export const _before = function ( beforeFunc ) {
-  console.log( beforeFunc )
   if ( !_isFunction( beforeFunc ) )
   {
     throw Error( `a function should be passed to the @before decorator` );

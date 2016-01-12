@@ -58,3 +58,6 @@ export { _passedValuesEqualToNumberOfArguments as passedValuesEqualToNumberOfArg
 export { _after as after } from './@after';
 
 export { _before as before } from './@before';
+
+export { _deprecated as deprecated,
+         _deprecated as deprecate } from './@deprecated';
