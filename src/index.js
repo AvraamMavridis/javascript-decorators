@@ -56,3 +56,5 @@ export { _passedValuesEqualToNumberOfArguments as passedValuesEqualToNumberOfArg
          _passedValuesEqualToNumberOfArguments as valuesEqualToNumberOfArguments } from './@passedValuesEqualToNumberOfArguments';
 
 export { _after as after } from './@after';
+
+export { _before as before } from './@before';
