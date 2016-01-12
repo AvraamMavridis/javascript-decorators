@@ -61,3 +61,7 @@ export { _before as before } from './@before';
 
 export { _deprecated as deprecated,
          _deprecated as deprecate } from './@deprecated';
+
+export { _compose     as compose,
+         _compose     as rightCompose,
+         _leftCompose as leftCompose } from './@compose';

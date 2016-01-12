@@ -20,7 +20,7 @@ export const _after = function ( afterFunc ) {
   {
     throw Error( `a function should be passed to the @after decorator` );
   }
-  return function ( key, target, descriptor )
+  return function ( target, key, descriptor )
   {
     const func = descriptor.value;
     descriptorIsFunc( key, func );
