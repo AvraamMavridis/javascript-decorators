@@ -63,11 +63,11 @@ p.init(); // 43
 
 + **@deprecated**: Logs a warning message indicating that the method has been deprecated.
 
-+ **before ( beforeFunc )**: Executes the `beforeFunc` before the class" method.
++ **@before ( beforeFunc )**: Executes the `beforeFunc` before the class" method.
 
-+ **after ( afterFunc )**: Executes the `afterFunc` after the class" method.
++ **@after ( afterFunc )**: Executes the `afterFunc` after the class" method.
 
-+ **valuesEqualToNumberOfArguments ( failSilent )**: Executes the method only if the number of values pass to the function is equal with the number of function's parameters, otherwise it will through an exception unless failSilent = true.
++ **@valuesEqualToNumberOfArguments ( failSilent )**: Executes the method only if the number of values pass to the function is equal with the number of function's parameters, otherwise it will through an exception unless failSilent = true.
 
 + **@overridden()** The method can be called from an instance of the base class, but cannot be called from an instance of a derived class. The derived class has to define its own version.
 

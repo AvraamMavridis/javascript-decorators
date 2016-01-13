@@ -1,5 +1,90 @@
 ## Examples
 
+### <a name="@multiInherit"></a>@multiInherit
+
+```js
+class Manager{
+  render(){ return 42; }
+  init(){ return 43; }
+  t(){ return 44; }
+};
+class Employee{
+  render(){ return 45; }
+  mount(){ return 46; }
+  t(){ return 47;}
+};
+
+@multiInherit( Manager, Employee )
+class Person{
+  t(){ return 3; }
+};
+
+const p = new Person();
+p.render(); // 45
+p.t(); // 3
+p.init(); // 43
+```
+
+### <a name="@partiallyInherit"></a>@partiallyInherit
+
+```js
+class Manager{
+  render(){ return 42; }
+  init(){ return 43; }
+  t(){ return 44; }
+};
+
+@partiallyInherit( Manager, ['render', 't'] )
+class Person{
+  t(){ return 3; }
+};
+
+const p = new Person();
+p.render(); // 42
+p.t(); // 3
+p.init(); // throws error, init undefined
+```
+
+### <a name="@compose"></a>@compose
+
+```js
+
+const r = (t) => t * 5;
+const r2 = (t) => t + 3;
+
+class Person {
+  @compose([r, r2])
+  doSomething() {
+    return 2;
+  }
+
+  @leftCompose([r, r2])
+  doSomething2() {
+    return 2;
+  }
+};
+
+
+var p = new Person();
+p.doSomething(); // 13
+p.doSomething2(); // 25
+```
+
+### <a name="@valuesEqualToNumberOfArguments"></a>@valuesEqualToNumberOfArguments
+
+```js
+class Person {
+  @valuesEqualToNumberOfArguments()
+  doSomething( a ) {
+    return a;
+  }
+};
+
+
+var p = new Person();
+p.doSomething( 1,2,3,4,5,5,6); // throws an exception
+```
+
 ### <a name="@validateSchema"></a>@validateSchema
 
 Executes the method only if the passed values are valid according to the provided **schema**. Example:
