@@ -127,6 +127,19 @@ p.init(); // 43
 
 ## <a name="Changelog"></a>Changelog
 
+2016-01-12
+==========
+
+  * @compose, @leftCompose, @rightCompose decorators
+  * @deprecated decorator
+  * @before decorator
+  * @after decorator
+  * @valuesEqualToNumberOfArguments decorator
+  * Fix failSilent on @acceptsObject
+  * Internal refactor of multinheritance
+  * Update README
+  * Fix typo on export of @partiallyExtend
+
 2016-01-10 Version 0.5.0
 ==========
 
