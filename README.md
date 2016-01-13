@@ -6,7 +6,7 @@
 
 Common helpers using es7 decorators.
 
-You can see the [Changelog](#Changelog) for the version specific changes.
+You can see the [Changelog](https://github.com/AvraamMavridis/javascript-decorators/blob/master/CHANGELOG.md) for the version specific changes.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
@@ -44,6 +44,8 @@ p.render(); // 45
 p.t(); // 3
 p.init(); // 43
 ```
+
+**More examples [here](https://github.com/AvraamMavridis/javascript-decorators/blob/master/EXAMPLES.md)**
 
 ## Decorators
 
