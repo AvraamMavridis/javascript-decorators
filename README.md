@@ -55,6 +55,18 @@ p.init(); // 43
 
 ###Method decorators:
 
++ **@compose( methods ) (alias: @rightCompose)**: Call each method passing the result of the previous as an argument. In mathematics `(g º f)(x) = g(f(x))`. The functions are executed from right-to-left with the class's method executed last. See more on examples.
+
++ **@leftCompose( methods )**: The left-to-right version of the previous.
+
++ **@deprecated**: Logs a warning message indicating that the method has been deprecated.
+
++ **before ( beforeFunc )**: Executes the `beforeFunc` before the class" method.
+
++ **after ( afterFunc )**: Executes the `afterFunc` after the class" method.
+
++ **valuesEqualToNumberOfArguments ( failSilent )**: Executes the method only if the number of values pass to the function is equal with the number of function's parameters, otherwise it will through an exception unless failSilent = true.
+
 + **@overridden()** The method can be called from an instance of the base class, but cannot be called from an instance of a derived class. The derived class has to define its own version.
 
 + **@forceoverridden()** This is a more strict version of the previous. The method cannot be called from an instance of the base class or derived class. The derived class has to define its own version. Not particularly useful, mostly as a signal that the method has to be implemented on the subclass.
