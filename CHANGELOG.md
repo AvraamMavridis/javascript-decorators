@@ -1,6 +1,6 @@
 ## <a name="Changelog"></a>Changelog
 
-2016-01-12
+2016-01-13 Version 0.6.0
 ==========
 
   * @compose (alias: @rightCompose ), @leftCompose decorators
