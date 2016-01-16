@@ -55,6 +55,8 @@ p.init(); // 43
 
 ###Method decorators:
 
++ **@autobind**: function calls always have this refer to the class instance
+
 + **@compose( methods ) (alias: @rightCompose)**: Call each method passing the result of the previous as an argument. In mathematics `(g º f)(x) = g(f(x))`. The functions are executed from right-to-left with the class's method executed last. See more on examples.
 
 + **@leftCompose( methods )**: The left-to-right version of the previous.

@@ -1,5 +1,10 @@
 ## <a name="Changelog"></a>Changelog
 
+2016-01-16 Version 0.7.0
+==========
+
+  * @autobind decorator for methods
+
 2016-01-13 Version 0.6.0
 ==========
 
