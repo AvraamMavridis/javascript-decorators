@@ -65,3 +65,5 @@ export { _deprecated as deprecated,
 export { _compose     as compose,
          _compose     as rightCompose,
          _leftCompose as leftCompose } from './@compose';
+
+export { _autobind as autobind } from '/@autobind';

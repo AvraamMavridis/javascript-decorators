@@ -5,3 +5,5 @@
 .travis.yml
 npm-debug.log
 test/
+app/
+src/
