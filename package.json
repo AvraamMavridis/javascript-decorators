@@ -99,7 +99,7 @@
     "babel-register": "^6.3.13",
     "chai": "^2.0.0",
     "eslint": "^1.10.3",
-    "eslint-config-airbnb": "^2.0.0",
+    "eslint-config-airbnb": "^4.0.0",
     "eslint-config-google": "^0.3.0",
     "eslint-plugin-react": "^3.11.2",
     "mocha": "^2.1.0",
