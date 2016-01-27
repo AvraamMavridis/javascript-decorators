@@ -104,7 +104,7 @@
     "eslint-plugin-react": "^3.16.1",
     "mocha": "^2.4.2",
     "promise": "^7.1.1",
-    "sinon": "^1.17.2",
+    "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0"
   }
 }
