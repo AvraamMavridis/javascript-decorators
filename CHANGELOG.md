@@ -1,5 +1,10 @@
 ## <a name="Changelog"></a>Changelog
 
+2016-02-20 Version 0.7.1
+==========
+
+  * Fix depedencies versions in package.json
+
 2016-01-16 Version 0.7.0
 ==========
 
