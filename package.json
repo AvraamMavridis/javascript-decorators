@@ -1,6 +1,6 @@
 {
   "name": "javascript-decorators",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "homepage": "https://github.com/AvraamMavridis/javascript-decorators",
   "repository": {
     "type": "git",
@@ -98,9 +98,8 @@
     "babel-preset-stage-2": "^6.3.13",
     "babel-register": "^6.5.2",
     "chai": "^3.5.0",
-    "eslint": "^2.2.0",
+    "eslint": "^1.0.0",
     "eslint-config-airbnb": "^5.0.1",
-    "eslint-config-google": "^0.4.0",
     "eslint-plugin-react" : "^3.16.1",
     "mocha": "^2.4.5",
     "promise": "^7.1.1",
