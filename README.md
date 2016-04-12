@@ -146,3 +146,7 @@ This project adheres to the Contributor Covenant [code of conduct](http://contri
 Contact:
 
 Twitter: [@avraamakis](https://twitter.com/avraamakis)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/AvraamMavridis/javascript-decorators/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
