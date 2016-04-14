@@ -84,7 +84,7 @@
     "deepcopy": "^0.6.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.4.5",
+    "babel-cli": "^6.7.5",
     "babel-core": "^6.7.2",
     "babel-plugin-syntax-object-rest-spread": "^6.3.13",
     "babel-plugin-transform-decorators": "^6.6.5",
