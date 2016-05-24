@@ -101,7 +101,7 @@
     "eslint": "^2.7.0",
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-react": "^5.1.0",
-    "mocha": "^2.4.5",
+    "mocha": "^2.5.2",
     "promise": "^7.1.1",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0"
