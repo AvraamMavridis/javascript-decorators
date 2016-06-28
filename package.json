@@ -1,6 +1,6 @@
 {
   "name": "javascript-decorators",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "homepage": "https://github.com/AvraamMavridis/javascript-decorators",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
   "description": "Decorator Helpers",
   "scripts": {
     "test": "npm run compile && mocha --compilers js:babel-register --require babel-polyfill",
-    "compile": "babel --presets es2015,stage-0,stage-1,stage-2 --require babel-polyfill -d lib/ src/",
+    "compile": "babel --presets es2015,stage-0 --require babel-polyfill -d lib/ src/",
     "prepublish": "npm run compile",
     "watch": "npm-scripts-watcher"
   },
@@ -81,29 +81,27 @@
   "license": "ISC",
   "dependencies": {
     "deep-equal": "^1.0.1",
-    "deepcopy": "^0.6.0"
+    "deepcopy": "^0.6.3"
   },
   "devDependencies": {
-    "babel-cli": "^6.7.7",
-    "babel-core": "^6.7.2",
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
     "babel-plugin-syntax-object-rest-spread": "^6.8.0",
-    "babel-plugin-transform-decorators": "^6.6.5",
+    "babel-plugin-transform-decorators": "^6.8.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-plugin-transform-object-rest-spread": "^6.3.13",
-    "babel-polyfill": "^6.7.4",
-    "babel-preset-es2015": "^6.1.18",
-    "babel-preset-react": "^6.1.18",
-    "babel-preset-stage-0": "^6.1.18",
-    "babel-preset-stage-1": "^6.3.13",
-    "babel-preset-stage-2": "^6.3.13",
-    "babel-register": "^6.5.2",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.9.0",
     "chai": "^3.5.0",
-    "eslint": "^2.7.0",
-    "eslint-config-airbnb": "^7.0.0",
-    "eslint-plugin-react": "^5.1.0",
-    "mocha": "^2.4.5",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-react": "^5.2.2",
+    "mocha": "^2.5.3",
     "promise": "^7.1.1",
-    "sinon": "^1.17.3",
+    "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0"
   }
 }
