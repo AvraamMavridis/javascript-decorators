@@ -1,5 +1,10 @@
 ## <a name="Changelog"></a>Changelog
 
+2016-07-01 Version 0.8.1
+==========
+
+  * Update README
+
 2016-07-01 Version 0.8.0
 ==========
 
