@@ -49,6 +49,8 @@ p.init(); // 43
 
 ###Class decorators:
 
++ **@abstract()** :  Make a class "abstract". It cannot be instantiated directly, but it can be inherrited.
+
 + **@multiInherit( array of classes )** (alias: `@multiExtend()`)  :  Inherit all the methods of the passed classes. If two classes have method with the same name the last one is inheritted.
 
 + **@partiallyInherit( class or array of classes, methodName or array of methodNames )** (alias: `@partiallyExtend()`)  :  Inherit only the specified methods.
