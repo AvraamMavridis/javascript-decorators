@@ -13,9 +13,11 @@ const __inherit = function ( _clas, _meths, _partially )
   const methods = [].concat( _meths );
   return function ( target )
   {
-    classes.forEach( function ( _class ) {
+    classes.forEach( _class =>
+    {
       const keys = Object.getOwnPropertyNames( _class.prototype );
-      keys.forEach( function ( key ) {
+      keys.forEach( key =>
+      {
         if ( _partially )
         {
           if ( !target.prototype[ key ] && methods.indexOf( key ) > -1 && _isFunction( _class.prototype[ key ] ) )
@@ -48,7 +50,8 @@ const __inherit = function ( _clas, _meths, _partially )
  *
  * @return { class }
  */
-export const _multiInherit = function ( ...args ) {
+export const _multiInherit = function ( ...args )
+{
   return __inherit( args, [], false );
 };
 
@@ -62,7 +65,8 @@ export const _multiInherit = function ( ...args ) {
  *
  * @return { class }
  */
-export const _partialyInherit = function ( _clas, _meths ) {
+export const _partialyInherit = function ( _clas, _meths )
+{
   const classes = [].concat( _clas );
   const methods = [].concat( _meths );
   return __inherit( classes, methods, true );

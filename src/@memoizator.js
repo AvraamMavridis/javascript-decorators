@@ -6,7 +6,8 @@
 */
 import { descriptorIsFunc } from './helpers';
 
-export const _memoization = function () {
+export const _memoization = function ()
+{
   const cache = new Map();
 
   return function ( key, target, descriptor )
@@ -16,7 +17,8 @@ export const _memoization = function () {
     descriptor.value = function ( ...args )
     {
       const ckey = args.join( '' );
-      if ( cache.has( ckey ) ) {
+      if ( cache.has( ckey ) )
+      {
         return cache.get( ckey );
       }
       const res = func.apply( this, args );

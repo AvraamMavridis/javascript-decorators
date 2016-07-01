@@ -1,5 +1,12 @@
 ## <a name="Changelog"></a>Changelog
 
+2016-07-01 Version 0.8.0
+==========
+
+  * @abstract decorator for classes
+  * eslint fixes
+  * dependencies update
+
 2016-02-20 Version 0.7.1
 ==========
 

@@ -17,14 +17,16 @@ import { descriptorIsFunc } from './helpers';
  *
  * @return { function }  decorator function
  */
-export const _immutable = function () {
+export const _immutable = function ()
+{
   return function ( key, target, descriptor )
   {
     const func = descriptor.value;
     descriptorIsFunc( key, func );
     descriptor.value = function ( ...args )
     {
-      const newArgs = args.reduce( function ( previousval, currentval ) {
+      const newArgs = args.reduce( ( previousval, currentval ) =>
+      {
         previousval.push( deepcopy( currentval ) );
         return previousval;
       }, [] );
@@ -34,7 +36,8 @@ export const _immutable = function () {
   };
 };
 
-export const _doesNotMutate = function () {
+export const _doesNotMutate = function ()
+{
   return function ( key, target, descriptor )
   {
     const func = descriptor.value;
@@ -43,7 +46,8 @@ export const _doesNotMutate = function () {
     {
       const tempArgs = deepcopy( args );
       const returnValue = func.apply( this, args );
-      if ( !deepEqual( args, tempArgs ) ) {
+      if ( !deepEqual( args, tempArgs ) )
+      {
         throw Error( `${target} mutates the passed values` );
       }
       return returnValue;

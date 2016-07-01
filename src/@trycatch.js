@@ -15,7 +15,8 @@ import { _isFunction } from './validationHelpers';
  * @param  { func } errorHandler
  *
  */
-export const _trycatch = function ( errorHandler ) {
+export const _trycatch = function ( errorHandler )
+{
 
   if ( !_isFunction( errorHandler ) )
   {
@@ -29,10 +30,12 @@ export const _trycatch = function ( errorHandler ) {
     descriptor.value = function ( ...args )
     {
       let res;
-      try {
+      try
+      {
         res = func.apply( this, args );
       }
-      catch ( e ) {
+      catch ( e )
+      {
         errorHandler( e );
       }
       return res;

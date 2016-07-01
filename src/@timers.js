@@ -13,7 +13,8 @@ import { descriptorIsFunc } from './helpers';
  * @param  { number } wait = 300
  *
  */
-const __timeout = function ( wait = 300 ) {
+const __timeout = function ( wait = 300 )
+{
   const debounceKeys = {};
 
   return function ( key, target, descriptor )
@@ -23,7 +24,8 @@ const __timeout = function ( wait = 300 ) {
     const dkey = Symbol();
     descriptor.value = function ( ...args )
     {
-      debounceKeys[ dkey ] = setTimeout( () => {
+      debounceKeys[ dkey ] = setTimeout( () =>
+      {
         delete debounceKeys[ dkey ];
         func.apply( this, args );
       }, wait );

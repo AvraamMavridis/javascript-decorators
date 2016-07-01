@@ -20,7 +20,7 @@ export const _autobind = function ( ) {
     descriptorIsFunc( key, func );
     delete descriptor.writable;
     delete descriptor.value;
-    
+
     return {
       ...descriptor,
       get() {

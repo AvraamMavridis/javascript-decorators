@@ -16,15 +16,18 @@ import { descriptorIsFunc } from './helpers';
  *
  * @return { function }  decorator function
  */
-const __times = function ( times = 1 ) {
+const __times = function ( times = 1 )
+{
   let timescalled = 0;
   let res;
-  return function ( target, key, descriptor ) {
+  return function ( target, key, descriptor )
+  {
     const func = descriptor.value;
     descriptorIsFunc( key, func );
     descriptor.value = function ( ...args )
     {
-      if ( timescalled !== times ) {
+      if ( timescalled !== times )
+      {
         timescalled++;
         res = func.apply( this, args );
       }
@@ -44,8 +47,10 @@ const __times = function ( times = 1 ) {
  *
  * @return { function }  decorator function
  */
-const __timesCalled = function () {
-  return function ( target, key, descriptor ) {
+const __timesCalled = function ()
+{
+  return function ( target, key, descriptor )
+  {
     const func = descriptor.value;
     descriptorIsFunc( key, func );
     descriptor.value = function ( ...args )

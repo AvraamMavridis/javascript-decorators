@@ -12,7 +12,8 @@ import { descriptorIsFunc, noop } from './helpers';
  * @method log
  *
  */
-export const _log = function () {
+export const _log = function ()
+{
   return function ( target, key, descriptor )
   {
     const func = descriptor.value;
@@ -51,7 +52,8 @@ const _getLocalStorageItems = function ()
 {
   const _localStorage = _getLocalStorage();
   let sizes = Object.keys( _localStorage );
-  sizes = sizes.map( function ( key ) {
+  sizes = sizes.map( key =>
+  {
     const obj = {};
     obj.name = key;
     obj.size = localStorage[ key ].length * 2 / 1024 / 1024;
@@ -80,7 +82,8 @@ const _getLocalStorageSize = function ()
  * @method loglocalstorage
  *
  */
-export const _loglocalstorage = function () {
+export const _loglocalstorage = function ()
+{
 
   return function ( target, key, descriptor )
   {
@@ -106,7 +109,8 @@ export const _loglocalstorage = function () {
  *
  * @return {[type]}  [description]
  */
-export const _donotbase = function ( type ) {
+export const _donotbase = function ( type )
+{
   const nativeFuncs = {};
   const types = [].concat( type );
 
@@ -117,7 +121,8 @@ export const _donotbase = function ( type ) {
     descriptor.value = function ( ...args )
     {
       // nooping native console
-      types.forEach( function ( _type ) {
+      types.forEach( _type =>
+      {
         nativeFuncs[ _type ] = console[ _type ];
         console[ _type ] = noop;
       } );
@@ -125,7 +130,8 @@ export const _donotbase = function ( type ) {
       const res = func.apply( this, args );
 
       // restore native
-      types.forEach( function ( _type ) {
+      types.forEach( _type =>
+      {
         console[ _type ] = nativeFuncs[ _type ];
       } );
 

@@ -15,13 +15,15 @@ import { descriptorIsFunc } from './helpers';
 *
 * @return { function }  decorator function
 */
-const __compose = function ( _meths, composeType ) {
+const __compose = function ( _meths, composeType )
+{
   if ( composeType === 'LEFT_COMPOSE' )
   {
     _meths.reverse();
   }
   const meths = [].concat( _meths );
-  meths.forEach( function ( meth ) {
+  meths.forEach( meth =>
+  {
     if ( !_isFunction( meth ) )
     {
       throw Error( `${meth.constructor.name} is not a function` );
@@ -35,9 +37,7 @@ const __compose = function ( _meths, composeType ) {
     descriptor.value = function ( ...args )
     {
       const initres = func.apply( this, args );
-      const res = meths.reduce( function ( previousValue, currentMeth ) {
-        return currentMeth( previousValue );
-      }, initres );
+      const res = meths.reduce( ( previousValue, currentMeth ) => currentMeth( previousValue ), initres );
 
       return res;
     };

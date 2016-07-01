@@ -7,15 +7,19 @@
 * @author  Avraam Mavridis      <avr.mav@gmail.com>
 *
 */
-export default restLengthEqualTo = function( restLength ){  
-  return function( key, target, descriptor ){
+export default function ( restLength )
+{
+  return function ( key, target, descriptor )
+  {
     const func = descriptor.value;
-    descriptor.value = function(){
-      if( (arguments.length - func.length) !== restLength ){
-        throw Error(`Number of rest values is not equal to ${restLength}`)
+    descriptor.value = function ( ...rest )
+    {
+      if ( ( rest.length - func.length ) !== restLength )
+      {
+        throw Error( `Number of rest values is not equal to ${restLength}` );
       }
-      func.call(this, arguments);
-    }
+      func.call( this, rest );
+    };
     return descriptor;
-  }
+  };
 }

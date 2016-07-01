@@ -13,14 +13,17 @@ import { descriptorIsFunc } from './helpers';
  * @method _overridden
  *
  */
-export const _overridden = function () {
+export const _overridden = function ()
+{
   return function ( target, key, descriptor )
   {
     const func = descriptor.value;
     descriptorIsFunc( key, func );
-    descriptor.value = function ( ...args ) {
+    descriptor.value = function ( ...args )
+    {
       const thisPrototype = Object.getPrototypeOf( this );
-      if( target !== thisPrototype) {
+      if ( target !== thisPrototype )
+      {
         throw Error( `${thisPrototype.constructor.name} should overridde method ${key} of the base class ${target.constructor.name}` );
       }
       return func.call( this, args );
@@ -36,11 +39,13 @@ export const _overridden = function () {
  * @method _forceoverriden
  *
  */
-export const _forceoverridden = function () {
+export const _forceoverridden = function ()
+{
   return function ( target, key, descriptor )
   {
     descriptorIsFunc( key, descriptor.value );
-    descriptor.value = function ( ...args ) {
+    descriptor.value = function ( ...args )
+    {
       throw Error( `method ${key} of the base class ${target.constructor.name} should be overridden` );
     };
     return descriptor;

@@ -5,12 +5,15 @@
 * @author  Avraam Mavridis      <avr.mav@gmail.com>
 *
 */
-export const _passedValuesEqualToNumberOfArguments = function ( failSilent = false ) {
+export const _passedValuesEqualToNumberOfArguments = function ( failSilent = false )
+{
   return function ( target, key, descriptor )
   {
     const func = descriptor.value;
-    descriptor.value = function ( ...args ) {
-      if ( func.length !== args.length ) {
+    descriptor.value = function ( ...args )
+    {
+      if ( func.length !== args.length )
+      {
         if ( failSilent ) return;
         throw Error( `Only ${func.length} values should be passed to the function` );
       }

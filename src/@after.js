@@ -15,10 +15,11 @@ import { descriptorIsFunc } from './helpers';
  *
  * @return { function }  decorator function
  */
-export const _after = function ( afterFunc ) {
+export const _after = function ( afterFunc )
+{
   if ( !_isFunction( afterFunc ) )
   {
-    throw Error( `a function should be passed to the @after decorator` );
+    throw Error( 'a function should be passed to the @after decorator' );
   }
   return function ( target, key, descriptor )
   {
@@ -32,7 +33,8 @@ export const _after = function ( afterFunc ) {
       {
         return afterFuncRes.then( () => res );
       }
-      else {
+      else
+      {
         return res;
       }
 

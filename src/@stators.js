@@ -5,7 +5,8 @@
 *
 */
 
-export const _enumerable = function () {
+export const _enumerable = function ()
+{
   return function ( key, target, descriptor )
   {
     descriptor.enumerable = true;
@@ -13,7 +14,8 @@ export const _enumerable = function () {
   };
 };
 
-export const _nonenumerable = function () {
+export const _nonenumerable = function ()
+{
   return function ( key, target, descriptor )
   {
     descriptor.enumerable = false;
@@ -21,7 +23,8 @@ export const _nonenumerable = function () {
   };
 };
 
-export const _readonly = function () {
+export const _readonly = function ()
+{
   return function ( key, target, descriptor )
   {
     descriptor.writable = false;
@@ -29,7 +32,8 @@ export const _readonly = function () {
   };
 };
 
-export const _nonconfigurable = function () {
+export const _nonconfigurable = function ()
+{
   return function ( key, target, descriptor )
   {
     descriptor.configurable = false;

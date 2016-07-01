@@ -15,7 +15,8 @@ import { descriptorIsFunc } from './helpers';
  *
  * @return { Boolean }
  */
-export const _isObject = function ( prop ) {
+export const _isObject = function ( prop )
+{
   return ( typeof prop === 'object' ) && ( prop !== null );
 };
 
@@ -35,7 +36,8 @@ export const _isArray = Array.isArray;
  *
  * @return { Boolean }
  */
-export const _isNumber = function ( prop ) {
+export const _isNumber = function ( prop )
+{
   return typeof prop === 'number' && isFinite( prop );
 };
 
@@ -48,7 +50,8 @@ export const _isNumber = function ( prop ) {
  *
  * @return { Boolean }
  */
-export const _isInteger = function ( prop ) {
+export const _isInteger = function ( prop )
+{
   return _isNumber( prop ) && prop % 1 == 0;
 };
 
@@ -61,7 +64,8 @@ export const _isInteger = function ( prop ) {
  *
  * @return { Boolean }
  */
-export const _isBoolean = function ( prop ) {
+export const _isBoolean = function ( prop )
+{
   return typeof prop === 'boolean';
 };
 
@@ -74,7 +78,8 @@ export const _isBoolean = function ( prop ) {
  *
  * @return { Boolean }
  */
-export const _isFunction = function ( prop ) {
+export const _isFunction = function ( prop )
+{
   return typeof prop === 'function';
 };
 
@@ -87,7 +92,8 @@ export const _isFunction = function ( prop ) {
  *
  * @return { Boolean }
  */
-export const _isPromise = function ( prop ) {
+export const _isPromise = function ( prop )
+{
   return prop !== null &&
    ( typeof prop === 'object' || typeof prop === 'function' ) &&
     typeof prop.then === 'function';
@@ -102,7 +108,8 @@ export const _isPromise = function ( prop ) {
  *
  * @return { Boolean }
  */
-export const _isString = function ( prop ) {
+export const _isString = function ( prop )
+{
   return typeof prop === 'string';
 };
 
@@ -146,10 +153,11 @@ const _validateProperty = function ( property, type )
       isValid = _isPromise( property );
       break;
     default:
-      throw Error( `${ type } invalid type` );
+      throw Error( `${type} invalid type` );
   }
-  if ( !isValid ) {
-    throw Error( `${ property } is not ${ type }` );
+  if ( !isValid )
+  {
+    throw Error( `${property} is not ${type}` );
   }
 };
 
@@ -163,7 +171,8 @@ const _validateProperty = function ( property, type )
  *
  * @return { Boolean }
  */
-export const _isValidSchema = function ( schema, position = 0 ) {
+export const _isValidSchema = function ( schema, position = 0 )
+{
   const schemaKeys = Object.keys( schema );
 
   return function ( target, key, descriptor )
@@ -176,7 +185,8 @@ export const _isValidSchema = function ( schema, position = 0 ) {
       {
         throw Error( `${prop} is not an object` );
       }
-      for ( const schemaKey of schemaKeys ) {
+      for ( const schemaKey of schemaKeys )
+      {
         if ( !prop.hasOwnProperty( schemaKey ) )
         {
           throw Error( `Object has not "${schemaKey}" property` );
@@ -203,8 +213,10 @@ const _getPropsToValidate = function ( position = 0, args = [] )
 {
   const positions = [].concat( position );
   const props = [];
-  for ( const p of positions ) {
-    if ( !!args[ p ] ) {
+  for ( const p of positions )
+  {
+    if ( !!args[ p ] )
+    {
       props.push( args[ p ] );
     }
   }
@@ -222,7 +234,8 @@ const _getPropsToValidate = function ( position = 0, args = [] )
  *
  * @return { function }  decorator function
  */
-export const _basefunc = function ( position = 0, validationFunc, errorMsg, failSilent ) {
+export const _basefunc = function ( position = 0, validationFunc, errorMsg, failSilent )
+{
 
   return function ( key, target, descriptor )
   {
@@ -231,11 +244,12 @@ export const _basefunc = function ( position = 0, validationFunc, errorMsg, fail
     descriptor.value = function ( ...args )
     {
       const props = _getPropsToValidate( position, args );
-      props.forEach( function ( prop ) {
+      props.forEach( prop =>
+      {
         if ( !validationFunc( prop ) )
         {
           if ( failSilent ) return;
-          throw Error( `${ prop } ${ errorMsg }` );
+          throw Error( `${prop} ${errorMsg}` );
         }
       } );
       return func.apply( this, args );

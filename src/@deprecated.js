@@ -15,10 +15,11 @@ import { _isString } from './validationHelpers';
  *
  * @return { function }  decorator function
  */
-export const _deprecated = function ( msg ) {
+export const _deprecated = function ( msg )
+{
   if ( !_isString( msg ) )
   {
-    throw Error( `Warning message should be a string.` );
+    throw Error( 'Warning message should be a string.' );
   }
   return function ( target, key, descriptor )
   {
