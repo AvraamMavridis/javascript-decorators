@@ -1,7 +1,8 @@
 language: node_js
 node_js:
-  - "4.1"
-  - "0.12"
+  - "5.0"
+  - "6"
+  - "iojs"
 script:
   - npm install
   - npm run test
