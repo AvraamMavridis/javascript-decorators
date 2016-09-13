@@ -5,6 +5,7 @@
     "type": "git",
     "url": "https://github.com/AvraamMavridis/javascript-decorators"
   },
+  "version": "0.0.0-semantic-release",
   "main": "./index.js",
   "author": "Avraam Mavridis <avr.mav@gmail.com>",
   "description": "Decorator Helpers",
@@ -104,8 +105,8 @@
     "eslint-plugin-react": "^6.2.0",
     "mocha": "^3.0.2",
     "promise": "^7.1.1",
+    "semantic-release": "^4.3.5",
     "sinon": "^1.17.5",
-    "sinon-chai": "^2.8.0",
-    "semantic-release": "^4.3.5"
+    "sinon-chai": "^2.8.0"
   }
 }
