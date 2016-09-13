@@ -1,6 +1,5 @@
 {
   "name": "javascript-decorators",
-  "version": "0.8.4",
   "homepage": "https://github.com/AvraamMavridis/javascript-decorators",
   "repository": {
     "type": "git",
@@ -13,7 +12,8 @@
     "test": "npm run compile && mocha --compilers js:babel-register --require babel-polyfill",
     "compile": "babel --presets es2015,stage-0 --require babel-polyfill -d lib/ src/",
     "prepublish": "npm run compile",
-    "watch": "npm-scripts-watcher"
+    "watch": "npm-scripts-watcher",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "watch": {
     "src/**/*.js": [
@@ -98,13 +98,14 @@
     "babel-register": "^6.14.0",
     "chai": "^3.5.0",
     "eslint": "^3.5.0",
-    "eslint-config-airbnb": "^9.0.1",
+    "eslint-config-airbnb": "^11.1.0",
     "eslint-plugin-import": "^1.14.0",
-    "eslint-plugin-jsx-a11y": "^1.5.5",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.2.0",
     "mocha": "^3.0.2",
     "promise": "^7.1.1",
     "sinon": "^1.17.5",
-    "sinon-chai": "^2.8.0"
+    "sinon-chai": "^2.8.0",
+    "semantic-release": "^4.3.5"
   }
 }
