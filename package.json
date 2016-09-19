@@ -106,7 +106,7 @@
     "mocha": "^3.0.2",
     "promise": "^7.1.1",
     "semantic-release": "^4.3.5",
-    "sinon": "^1.17.5",
+    "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0"
   }
 }
