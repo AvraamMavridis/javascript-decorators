@@ -101,7 +101,7 @@
     "eslint": "^3.6.1",
     "eslint-config-airbnb": "^11.2.0",
     "eslint-plugin-import": "^1.16.0",
-    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.3.0",
     "mocha": "^3.0.2",
     "promise": "^7.1.1",
