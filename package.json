@@ -105,7 +105,7 @@
     "eslint-plugin-react": "^6.3.0",
     "mocha": "^3.0.2",
     "promise": "^7.1.1",
-    "semantic-release": "^4.3.5",
+    "semantic-release": "^6.3.2",
     "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0"
   }
