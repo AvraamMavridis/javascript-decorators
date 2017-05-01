@@ -107,6 +107,6 @@
     "promise": "^7.1.1",
     "semantic-release": "^6.3.2",
     "sinon": "^1.17.6",
-    "sinon-chai": "^2.8.0"
+    "sinon-chai": "^2.10.0"
   }
 }
