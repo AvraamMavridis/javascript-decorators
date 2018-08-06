@@ -83,7 +83,7 @@
   "license": "ISC",
   "dependencies": {
     "deep-equal": "^1.0.1",
-    "deepcopy": "^0.6.3"
+    "deepcopy": "^1.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
@@ -97,16 +97,16 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.16.3",
-    "chai": "^3.5.0",
-    "eslint": "^3.6.1",
-    "eslint-config-airbnb": "^13.0.0",
+    "chai": "^4.1.2",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.3.0",
-    "mocha": "^3.0.2",
-    "promise": "^7.1.1",
-    "semantic-release": "^6.3.2",
-    "sinon": "^1.17.6",
-    "sinon-chai": "^2.8.0"
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
+    "mocha": "^5.2.0",
+    "promise": "^8.0.1",
+    "semantic-release": "^15.9.5",
+    "sinon": "^6.1.4",
+    "sinon-chai": "^3.2.0"
   }
 }
