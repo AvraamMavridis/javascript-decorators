@@ -14,7 +14,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## How to use
 
-[![NPM](https://nodei.co/npm/javascript-decorators.png?mini=true)](https://nodei.co/npm/javascript-decorators/)
+[![NPM](https://nodei.co/npm/javascript-decorators.png?mini=true)](https://nodei.co/npm/javascript-decorators/) [![Greenkeeper badge](https://badges.greenkeeper.io/AvraamMavridis/javascript-decorators.svg)](https://greenkeeper.io/)
 
 `npm i --save javascript-decorators`
 
