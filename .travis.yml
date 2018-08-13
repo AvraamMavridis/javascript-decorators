@@ -3,10 +3,7 @@ notifications:
   email: false
 language: node_js
 node_js:
-  - "5"
-  - "latest"
-before_install:
-  - npm i -g npm@^5.0.0
+  - "8"
 before_script:
   - npm prune
 after_success:
