@@ -10,7 +10,8 @@ export const _passedValuesEqualToNumberOfArguments = function (failSilent = fals
     const func = descriptor.value;
     descriptor.value = function (...args) {
       if (func.length !== args.length) {
-        if (failSilent) return () => null;
+        // eslint-disable-next-line
+        if (failSilent) return;
         throw Error(`Only ${ func.length } values should be passed to the function`);
       }
       return func.apply(this, args);
