@@ -2,7 +2,7 @@
 
 Compatible with Node JS version >= 5
 
-[![npm version](https://badge.fury.io/js/javascript-decorators.svg)](https://badge.fury.io/js/javascript-decorators) [![Build Status](https://travis-ci.org/AvraamMavridis/javascript-decorators.svg?branch=master)](https://travis-ci.org/AvraamMavridis/javascript-decorators) [![Code Climate](https://codeclimate.com/github/AvraamMavridis/javascript-decorators/badges/gpa.svg)](https://codeclimate.com/github/AvraamMavridis/javascript-decorators) [![bitHound Overall Score](https://www.bithound.io/github/AvraamMavridis/javascript-decorators/badges/score.svg)](https://www.bithound.io/github/AvraamMavridis/javascript-decorators) [![bitHound Dependencies](https://www.bithound.io/github/AvraamMavridis/javascript-decorators/badges/dependencies.svg)](https://www.bithound.io/github/AvraamMavridis/javascript-decorators/master/dependencies/npm) [![CocoaPods](https://img.shields.io/cocoapods/l/AFNetworking.svg)]() [![semantic-versioning](https://img.shields.io/badge/semantic%20-versioning-green.svg)]()
+[![npm version](https://badge.fury.io/js/javascript-decorators.svg)](https://badge.fury.io/js/javascript-decorators) [![Build Status](https://travis-ci.org/AvraamMavridis/javascript-decorators.svg?branch=master)]
 
 Common helpers using es7 decorators.
 
@@ -10,7 +10,6 @@ You can see the [Changelog](https://github.com/AvraamMavridis/javascript-decorat
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
 ## How to use
 
