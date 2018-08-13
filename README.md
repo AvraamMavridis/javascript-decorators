@@ -2,7 +2,9 @@
 
 Compatible with Node JS version >= 5
 
-[![npm version](https://badge.fury.io/js/javascript-decorators.svg)](https://badge.fury.io/js/javascript-decorators) [![Build Status](https://travis-ci.org/AvraamMavridis/javascript-decorators.svg?branch=master)]
+[![npm version](https://badge.fury.io/js/javascript-decorators.svg)](https://badge.fury.io/js/javascript-decorators) 
+![Build Status](https://travis-ci.org/AvraamMavridis/javascript-decorators.svg?branch=master)
+[![Greenkeeper badge](https://badges.greenkeeper.io/AvraamMavridis/javascript-decorators.svg)](https://greenkeeper.io/)
 
 Common helpers using es7 decorators.
 
@@ -13,7 +15,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## How to use
 
-[![NPM](https://nodei.co/npm/javascript-decorators.png?mini=true)](https://nodei.co/npm/javascript-decorators/) [![Greenkeeper badge](https://badges.greenkeeper.io/AvraamMavridis/javascript-decorators.svg)](https://greenkeeper.io/)
+[![NPM](https://nodei.co/npm/javascript-decorators.png?mini=true)](https://nodei.co/npm/javascript-decorators/)
 
 `npm i --save javascript-decorators`
 
@@ -140,7 +142,6 @@ p.init(); // 43
 
 + **@nonenumerable()**
 
-![Splitline](http://www.centrosanisidoro.es/wp-content/themes/simplegridtheme/images/banner.png "Splitline")
 
 ## Contributing
 Feel free to open issues, make suggestions or send PRs.
