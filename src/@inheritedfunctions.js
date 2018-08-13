@@ -38,6 +38,7 @@ export const _overridden = function () {
 export const _forceoverridden = function () {
   return function (target, key, descriptor) {
     descriptorIsFunc(key, descriptor.value);
+    // eslint-disable-next-line
     descriptor.value = function (...args) {
       throw Error(`method ${ key } of the base class ${ target.constructor.name } should be overridden`);
     };

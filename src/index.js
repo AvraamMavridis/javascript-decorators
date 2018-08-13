@@ -8,7 +8,7 @@
 export {
   _immutable as immutable,
   _doesNotMutate as doesNotMutate
-} from './@immutablors.js';
+} from './@immutablors';
 
 export {
   _acceptsArray as acceptsArray,
@@ -20,7 +20,7 @@ export {
   _acceptsPromise as acceptsPromise,
   _acceptsString as acceptsString,
   _validateSchema as validateSchema
-} from './@validators.js';
+} from './@validators';
 
 export { _memoization as memoization } from './@memoizator';
 

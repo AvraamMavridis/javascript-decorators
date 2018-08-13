@@ -15,15 +15,16 @@ import { _isString } from './validationHelpers';
  *
  * @return { function }  decorator function
  */
-export const _deprecated = function (msg) {
+export const _deprecated = function deprecated(msg) {
   if (!_isString(msg)) {
     throw Error('Warning message should be a string.');
   }
-  return function (target, key, descriptor) {
+  return function deprecatedTarget(target, key, descriptor) {
     const func = descriptor.value;
     descriptorIsFunc(target, func);
-    const name = target.constructor.name;
-    descriptor.value = function (...args) {
+    const { name } = target.constructor;
+    descriptor.value = function decriptorValue(...args) {
+      // eslint-disable-next-line
       console.warn(`${ name }#${ key } : ${ msg }`);
       return func.apply(this, args);
     };

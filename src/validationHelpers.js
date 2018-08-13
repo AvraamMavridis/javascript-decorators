@@ -48,8 +48,8 @@ export const _isNumber = function (prop) {
  *
  * @return { Boolean }
  */
-export const _isInteger = function (prop) {
-  return _isNumber(prop) && prop % 1 == 0;
+export const _isInteger = function isInteger(prop) {
+  return _isNumber(prop) && (prop % 1 === 0);
 };
 
 /**

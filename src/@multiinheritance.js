@@ -15,7 +15,9 @@ const __inherit = function (_clas, _meths, _partially) {
       const keys = Object.getOwnPropertyNames(_class.prototype);
       keys.forEach(key => {
         if (_partially) {
-          if (!target.prototype[key] && methods.indexOf(key) > -1 && _isFunction(_class.prototype[key])) {
+          if (!target.prototype[key]
+            && methods.indexOf(key) > -1
+            && _isFunction(_class.prototype[key])) {
             target.prototype[key] = _class.prototype[key];
           }
         } else if (!_partially) {
