@@ -84,7 +84,8 @@
   "license": "ISC",
   "dependencies": {
     "deep-equal": "^1.0.1",
-    "deepcopy": "^1.0.0"
+    "deepcopy": "^1.0.0",
+    "promise": "^8.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
@@ -107,7 +108,6 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
     "mocha": "^5.2.0",
-    "promise": "^8.0.1",
     "semantic-release": "^15.9.5",
     "sinon": "^6.1.4",
     "sinon-chai": "^3.2.0"
