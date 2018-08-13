@@ -14,25 +14,25 @@ import { descriptorIsFunc } from './helpers';
  *
  * @return { function }  decorator function
  */
-export const _autobind = function ( ) {
-  return function ( target, key, descriptor ) {
+export const _autobind = function autobind() {
+  return function autobindTarget(target, key, descriptor) {
     const func = descriptor.value;
-    descriptorIsFunc( key, func );
+    descriptorIsFunc(key, func);
     delete descriptor.writable;
     delete descriptor.value;
 
     return {
       ...descriptor,
       get() {
-        if ( this === target.prototype || this.hasOwnProperty( key ) ) {
+        if (this === target.prototype || this.hasOwnProperty(key)) {
           return func;
         }
 
-        Object.defineProperty( this, key, {
-           value        : func,
-           configurable : true,
-           writable     : true
-        } );
+        Object.defineProperty(this, key, {
+          value: func,
+          configurable: true,
+          writable: true
+        });
         return func;
       },
     };

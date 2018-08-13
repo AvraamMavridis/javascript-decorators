@@ -13,22 +13,18 @@ import { descriptorIsFunc } from './helpers';
  * @param  { number } wait = 300
  *
  */
-const __timeout = function ( wait = 300 )
-{
+const __timeout = function timeout(wait = 300) {
   const debounceKeys = {};
 
-  return function ( key, target, descriptor )
-  {
+  return function timeoutTarget(key, target, descriptor) {
     const func = descriptor.value;
-    descriptorIsFunc( key, func );
-    const dkey = Symbol();
-    descriptor.value = function ( ...args )
-    {
-      debounceKeys[ dkey ] = setTimeout( () =>
-      {
-        delete debounceKeys[ dkey ];
-        func.apply( this, args );
-      }, wait );
+    descriptorIsFunc(key, func);
+    const dkey = Symbol('dkey');
+    descriptor.value = function descriptorValue(...args) {
+      debounceKeys[dkey] = setTimeout(() => {
+        delete debounceKeys[dkey];
+        func.apply(this, args);
+      }, wait);
     };
     return descriptor;
   };
@@ -36,4 +32,4 @@ const __timeout = function ( wait = 300 )
 
 export const _timeout = __timeout;
 export const _debounce = __timeout;
-export const _defer = __timeout.bind( this, 0 );
+export const _defer = __timeout.bind(this, 0);

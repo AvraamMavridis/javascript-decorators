@@ -6,17 +6,13 @@
  *
  * @return { Class }  decorator function
  */
-export const _abstract = function ()
-{
-  return function ( target )
-  {
+export const _abstract = function abstract() {
+  return function abstractTarget(target) {
     return class Abstract extends target {
-      constructor()
-      {
+      constructor() {
         super();
-        if ( new.target === Abstract )
-        {
-          throw Error( `The ${target.name} is an abstract class` );
+        if (new.target === Abstract) {
+          throw Error(`The ${ target.name } is an abstract class`);
         }
       }
     };

@@ -15,28 +15,20 @@ import { _isFunction } from './validationHelpers';
  * @param  { func } errorHandler
  *
  */
-export const _trycatch = function ( errorHandler )
-{
-
-  if ( !_isFunction( errorHandler ) )
-  {
-    throw Error( `The ErrorHandler should be a function. ${JSON.stringify( errorHandler )} is not a function` );
+export const _trycatch = function (errorHandler) {
+  if (!_isFunction(errorHandler)) {
+    throw Error(`The ErrorHandler should be a function. ${ JSON.stringify(errorHandler) } is not a function`);
   }
 
-  return function ( key, target, descriptor )
-  {
+  return function (key, target, descriptor) {
     const func = descriptor.value;
-    descriptorIsFunc( key, func );
-    descriptor.value = function ( ...args )
-    {
+    descriptorIsFunc(key, func);
+    descriptor.value = function (...args) {
       let res;
-      try
-      {
-        res = func.apply( this, args );
-      }
-      catch ( e )
-      {
-        errorHandler( e );
+      try {
+        res = func.apply(this, args);
+      } catch (e) {
+        errorHandler(e);
       }
       return res;
     };

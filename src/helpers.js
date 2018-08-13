@@ -7,11 +7,9 @@
 
 import { _isFunction } from './validationHelpers';
 
-export const descriptorIsFunc = function ( key, func )
-{
-  if ( !_isFunction( func ) )
-  {
-    throw Error( `${key} is not a function!` );
+export const descriptorIsFunc = function (key, func) {
+  if (!_isFunction(func)) {
+    throw Error(`${ key } is not a function!`);
   }
   return true;
 };

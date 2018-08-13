@@ -12,17 +12,14 @@ import { descriptorIsFunc, noop } from './helpers';
  * @method log
  *
  */
-export const _log = function ()
-{
-  return function ( target, key, descriptor )
-  {
+export const _log = function () {
+  return function (target, key, descriptor) {
     const func = descriptor.value;
-    descriptorIsFunc( target, func );
-    descriptor.value = function ( ...args )
-    {
-      const res = func.apply( this, args );
-      console.log( '%c Passed Arguments: ', 'background: #222; color: #bada55', args );
-      console.log( '%c Returned Value  : ', 'background: #bada55; color: #222', res );
+    descriptorIsFunc(target, func);
+    descriptor.value = function (...args) {
+      const res = func.apply(this, args);
+      console.log('%c Passed Arguments: ', 'background: #222; color: #bada55', args);
+      console.log('%c Returned Value  : ', 'background: #bada55; color: #222', res);
       return res;
     };
     return descriptor;
@@ -36,8 +33,7 @@ export const _log = function ()
  *
  * @return { object }
  */
-export const _getLocalStorage = function ()
-{
+export const _getLocalStorage = function () {
   return localStorage;
 };
 
@@ -48,17 +44,15 @@ export const _getLocalStorage = function ()
  *
  * @return {[type]}              [description]
  */
-const _getLocalStorageItems = function ()
-{
+const _getLocalStorageItems = function () {
   const _localStorage = _getLocalStorage();
-  let sizes = Object.keys( _localStorage );
-  sizes = sizes.map( key =>
-  {
+  let sizes = Object.keys(_localStorage);
+  sizes = sizes.map(key => {
     const obj = {};
     obj.name = key;
-    obj.size = localStorage[ key ].length * 2 / 1024 / 1024;
+    obj.size = localStorage[key].length * 2 / 1024 / 1024;
     return obj;
-  } );
+  });
   return sizes;
 };
 
@@ -69,10 +63,9 @@ const _getLocalStorageItems = function ()
  *
  * @return { number }
  */
-const _getLocalStorageSize = function ()
-{
+const _getLocalStorageSize = function () {
   const items = _getLocalStorageItems();
-  const size = items.reduce( ( sum, next ) => sum + next.size, 0 );
+  const size = items.reduce((sum, next) => sum + next.size, 0);
   return size;
 };
 
@@ -82,20 +75,16 @@ const _getLocalStorageSize = function ()
  * @method loglocalstorage
  *
  */
-export const _loglocalstorage = function ()
-{
-
-  return function ( target, key, descriptor )
-  {
+export const _loglocalstorage = function () {
+  return function (target, key, descriptor) {
     const func = descriptor.value;
-    descriptorIsFunc( target, func );
-    descriptor.value = function ( ...args )
-    {
+    descriptorIsFunc(target, func);
+    descriptor.value = function (...args) {
       const sizeBefore = _getLocalStorageSize();
-      console.log( '%c Local Storage Size Before Function Call: ', 'background: #222; color: #bada55', `${sizeBefore} MB` );
-      const res = func.apply( this, args );
+      console.log('%c Local Storage Size Before Function Call: ', 'background: #222; color: #bada55', `${ sizeBefore } MB`);
+      const res = func.apply(this, args);
       const sizeAfter = _getLocalStorageSize();
-      console.log( '%c Local Storage Size After Function Call : ', 'background: #bada55; color: #222', `${sizeAfter} MB` );
+      console.log('%c Local Storage Size After Function Call : ', 'background: #bada55; color: #222', `${ sizeAfter } MB`);
       return res;
     };
     return descriptor;
@@ -109,31 +98,26 @@ export const _loglocalstorage = function ()
  *
  * @return {[type]}  [description]
  */
-export const _donotbase = function ( type )
-{
+export const _donotbase = function (type) {
   const nativeFuncs = {};
-  const types = [].concat( type );
+  const types = [].concat(type);
 
-  return function ( key, target, descriptor )
-  {
+  return function (key, target, descriptor) {
     const func = descriptor.value;
-    descriptorIsFunc( key, func );
-    descriptor.value = function ( ...args )
-    {
+    descriptorIsFunc(key, func);
+    descriptor.value = function (...args) {
       // nooping native console
-      types.forEach( _type =>
-      {
-        nativeFuncs[ _type ] = console[ _type ];
-        console[ _type ] = noop;
-      } );
+      types.forEach(_type => {
+        nativeFuncs[_type] = console[_type];
+        console[_type] = noop;
+      });
 
-      const res = func.apply( this, args );
+      const res = func.apply(this, args);
 
       // restore native
-      types.forEach( _type =>
-      {
-        console[ _type ] = nativeFuncs[ _type ];
-      } );
+      types.forEach(_type => {
+        console[_type] = nativeFuncs[_type];
+      });
 
       return res;
     };
@@ -141,7 +125,7 @@ export const _donotbase = function ( type )
   };
 };
 
-export const _donotlogmessages = _donotbase.bind( {}, 'log' );
-export const _donotlogwarnings = _donotbase.bind( {}, 'warn' );
-export const _donotlogerrors = _donotbase.bind( {}, 'error' );
-export const _donotlog = _donotbase.bind( {}, ['error', 'log', 'warn', 'table'] );
+export const _donotlogmessages = _donotbase.bind({}, 'log');
+export const _donotlogwarnings = _donotbase.bind({}, 'warn');
+export const _donotlogerrors = _donotbase.bind({}, 'error');
+export const _donotlog = _donotbase.bind({}, [ 'error', 'log', 'warn', 'table' ]);

@@ -15,29 +15,21 @@ import { descriptorIsFunc } from './helpers';
  *
  * @return { function }  decorator function
  */
-export const _after = function ( afterFunc )
-{
-  if ( !_isFunction( afterFunc ) )
-  {
-    throw Error( 'a function should be passed to the @after decorator' );
+export const _after = function after(afterFunc) {
+  if (!_isFunction(afterFunc)) {
+    throw Error('a function should be passed to the @after decorator');
   }
-  return function ( target, key, descriptor )
-  {
+  return function afterTarget(target, key, descriptor) {
     const func = descriptor.value;
-    descriptorIsFunc( key, func );
-    descriptor.value = function ( ...args )
-    {
-      const res = func.apply( this, args );
+    descriptorIsFunc(key, func);
+    descriptor.value = function descriptorValue(...args) {
+      const res = func.apply(this, args);
       const afterFuncRes = afterFunc();
-      if ( _isPromise( afterFuncRes ) )
-      {
-        return afterFuncRes.then( () => res );
-      }
-      else
-      {
-        return res;
+      if (_isPromise(afterFuncRes)) {
+        return afterFuncRes.then(() => res);
       }
 
+      return res;
     };
     return descriptor;
   };
