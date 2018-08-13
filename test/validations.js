@@ -35,10 +35,10 @@ class Person {
   @acceptsString()
   getString( obj ) { return true;  }
 
-  @validateSchema( { test1: 'number', test2: 'object', test3: 'array', test4: 'function', test5: 'promise' } );
+  @validateSchema( { test1: 'number', test2: 'object', test3: 'array', test4: 'function', test5: 'promise' } )
   getSchemaValidatedObject( obj ) { return true; }
 
-  @validateSchema( { test1: 'lol', test2: 'object' } );
+  @validateSchema( { test1: 'lol', test2: 'object' } )
   getSchemaValidatedObject2( obj ) { return true; }
 }
 
