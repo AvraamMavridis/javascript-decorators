@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/AvraamMavridis/javascript-decorators"
   },
-  "version": "1.0.2",
+  "version": "1.1.0",
   "main": "./index.js",
   "author": "Avraam Mavridis <avr.mav@gmail.com>",
   "description": "Decorator Helpers",
@@ -15,7 +15,7 @@
     "prepublish": "npm run compile",
     "watch": "npm-scripts-watcher",
     "lint": "eslint ./src --fix",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release && npm publish && semantic-release post"
   },
   "watch": {
     "src/**/*.js": [
