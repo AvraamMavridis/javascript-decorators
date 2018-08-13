@@ -3,7 +3,7 @@
 Compatible with Node JS version >= 5
 
 [![npm version](https://badge.fury.io/js/javascript-decorators.svg)](https://badge.fury.io/js/javascript-decorators) 
-![Build Status](https://travis-ci.org/AvraamMavridis/javascript-decorators.svg?branch=master)
+[![Build Status](https://travis-ci.org/AvraamMavridis/javascript-decorators.svg?branch=master)](https://travis-ci.org/AvraamMavridis/javascript-decorators)
 [![Greenkeeper badge](https://badges.greenkeeper.io/AvraamMavridis/javascript-decorators.svg)](https://greenkeeper.io/)
 
 Common helpers using es7 decorators.
@@ -50,7 +50,7 @@ p.init(); // 43
 
 ## Decorators
 
-###Class decorators:
+#### Class decorators:
 
 + **@abstract()** :  Make a class "abstract". It cannot be instantiated directly, but it can be inherrited.
 
@@ -58,7 +58,7 @@ p.init(); // 43
 
 + **@partiallyInherit( class or array of classes, methodName or array of methodNames )** (alias: `@partiallyExtend()`)  :  Inherit only the specified methods.
 
-###Method decorators:
+#### Method decorators:
 
 + **@autobind**: function calls always have this refer to the class instance
 
@@ -132,13 +132,13 @@ p.init(); // 43
 
 + **@enumerable()**
 
-###Method & Property decorators:
+#### Method & Property decorators:
 
 + **@readony()**
 
 + **@nonconfigurable()**
 
-### Property decorators:
+#### Property decorators:
 
 + **@nonenumerable()**
 
