@@ -3,7 +3,9 @@
 Compatible with Node JS version >= 5
 
 [![npm version](https://badge.fury.io/js/javascript-decorators.svg)](https://badge.fury.io/js/javascript-decorators) 
+
 [![Build Status](https://travis-ci.org/AvraamMavridis/javascript-decorators.svg?branch=master)](https://travis-ci.org/AvraamMavridis/javascript-decorators)
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/AvraamMavridis/javascript-decorators.svg)](https://greenkeeper.io/)
 
 Common helpers using es7 decorators.
