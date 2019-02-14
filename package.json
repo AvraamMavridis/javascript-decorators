@@ -84,7 +84,7 @@
   "license": "ISC",
   "dependencies": {
     "deep-equal": "^1.0.1",
-    "deepcopy": "^1.0.0",
+    "deepcopy": "^2.0.0",
     "promise": "^8.0.1"
   },
   "devDependencies": {
