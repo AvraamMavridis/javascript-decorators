@@ -103,7 +103,7 @@
     "babel-register": "^6.16.3",
     "chai": "^4.1.2",
     "eslint": "^5.3.0",
-    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-avraam": "^1.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
