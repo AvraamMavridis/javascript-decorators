@@ -108,7 +108,7 @@
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
-    "mocha": "^5.2.0",
+    "mocha": "^7.1.2",
     "semantic-release": "^15.9.5",
     "sinon": "^6.1.4",
     "sinon-chai": "^3.2.0"
